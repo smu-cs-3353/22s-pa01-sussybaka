@@ -18,7 +18,7 @@ env:
   # The name of any input files (use relative path)
   INPUT_FILE: input/test.txt
   # The name of any output files (use relative paths)
-  OUTPUT_FILE:
+  OUTPUT_FILE: output/test-bruteforce.txt output/test-highvalue.txt output/test-custom.txt
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -61,4 +61,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: project_output
-          path: ${{github.workspace}}/build/data
+          path: ${{github.workspace}}/build/output
