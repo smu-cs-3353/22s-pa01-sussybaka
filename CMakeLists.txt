@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.15)
 project(22s-pa01-sussybaka)
 
 # Executable
-add_executable(22s-pa01-sussybaka src/main.cpp)
+add_executable(22s-pa01-sussybaka src/main.cpp src/SussyBakaRunner.cpp src/SussyBakaRunner.h)
 
 #set(CMAKE_CXX_STANDARD 14)
 
