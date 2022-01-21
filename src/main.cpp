@@ -1,7 +1,20 @@
 #include <iostream>
+#include "Loader.h"
 
 
 
-int main() {
-    std::cout << "Hello World" << std::endl;
+int main(int argc, char** argv) {
+    // If argc is less than 2, stop the program
+    if (argc < 2) {
+        std::cout << "Program must have at least one argument" << std::endl;
+        return 1;
+    }
+
+    // Create a loader object using the given filename
+    Loader l;
+    std::string temp(argv[1]);
+    l.loadData(temp);
+
+    std::cout << std::endl;
+    return 0;
 }
