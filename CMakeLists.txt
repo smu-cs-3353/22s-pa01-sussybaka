@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.15)
-project(21f_flight_planner)
 
-set(CMAKE_CXX_STANDARD 14)
+# Project name
+project(22s-pa01-sussybaka)
 
-configure_file(data/sample01-flight-data.txt data/sample01-flight-data.txt COPYONLY)
-configure_file(data/sample01-req-flights.txt data/sample01-req-flights.txt COPYONLY)
+# Executable
+add_executable(22s-pa01-sussybaka main.cpp)
 
-add_executable(21f_flight_planner main.cpp catch_setup.cpp sample_tests.cpp test.cpp DSVector.h DSStack.h DSNode.h DSLinkedList.h DSAdjacencyList.h DSAdjacencyList.cpp DCNode.cpp DCNode.h OCNode.h OCNode.cpp DrFontenotsFavoriteFlightPlanner.h DrFontenotsFavoriteFlightPlanner.cpp PathNode.cpp PathNode.h)
+#set(CMAKE_CXX_STANDARD 14)
+
+# Input and output configure files
+configure_file(test.txt COPYONLY)
