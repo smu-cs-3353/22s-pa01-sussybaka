@@ -10,6 +10,15 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  # Setting the Build type to Debug
+  BUILD_TYPE: Debug
+  # Must match executable in cmake
+  TEST_EXE: 22s-pa01-sussybaka
+  # The name of any input files (use relative path)
+  INPUT_FILE: input/test.txt
+  # The name of any output files (use relative paths)
+  OUTPUT_FILE:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -19,18 +28,37 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    # Timeout After Minutes
+    timeout-minutes: 3
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Configure CMake
+        # Configure CMake in a 'build' subdirectory.
+        # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Build
+        # Builds your project in the build folder (on your local machine, this would be the cmake-build-debug folder)
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+      - name: Execute Tests
+        # This calls your program with no cmd line arguments which should trigger your CATCH tests to run.
+        working-directory: ${{github.workspace}}/build
+        run: ${{github.workspace}}/build/${{env.TEST_EXE}}
+
+      - name: Execute Project
+        # This step calls your program with the command line args
+        working-directory: ${{github.workspace}}/build
+        run: ${{github.workspace}}/build/${{env.TEST_EXE}} ${{env.INPUT_FILE}} ${{env.OUTPUT_FILE}}
+
+      - name: Upload output files to GitHub so they can be reviewed
+        # This step zips up the data folder and uploads it to Github for you to review.
+        # Note that the sample input will be included as well.  Anything in the data folder will be zipped.
+        uses: actions/upload-artifact@v2
+        with:
+          name: project_output
+          path: ${{github.workspace}}/build/data
