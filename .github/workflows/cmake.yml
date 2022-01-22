@@ -16,7 +16,7 @@ env:
   # Must match executable in cmake
   TEST_EXE: 22s-pa01-sussybaka
   # The name of any input files (use relative path)
-  INPUT_FILE:/input/test.txt
+  INPUT_FILE: /input/test.txt
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
