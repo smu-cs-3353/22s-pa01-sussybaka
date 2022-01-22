@@ -16,11 +16,7 @@ env:
   # Must match executable in cmake
   TEST_EXE: 22s-pa01-sussybaka
   # The name of any input files (use relative path)
-  INPUT_FILE: input/test.txt
-  # The name of any output files (use relative paths)
-  OUTPUT_FILE: output/test-bruteforce.txt output/test-highvalue.txt output/test-custom.txt
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  INPUT_FILE: ../input/test.txt
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -45,15 +41,10 @@ jobs:
         # Builds your project in the build folder (on your local machine, this would be the cmake-build-debug folder)
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-      - name: Execute Tests
-        # This calls your program with no cmd line arguments which should trigger your CATCH tests to run.
-        working-directory: ${{github.workspace}}/build
-        run: ${{github.workspace}}/build/${{env.TEST_EXE}}
-
       - name: Execute Project
         # This step calls your program with the command line args
         working-directory: ${{github.workspace}}/build
-        run: ${{github.workspace}}/build/${{env.TEST_EXE}} ${{env.INPUT_FILE}} ${{env.OUTPUT_FILE}}
+        run: ${{github.workspace}}/build/${{env.TEST_EXE}} ${{env.INPUT_FILE}}
 
       - name: Upload output files to GitHub so they can be reviewed
         # This step zips up the data folder and uploads it to Github for you to review.
