@@ -17,10 +17,6 @@ env:
   TEST_EXE: 22s-pa01-sussybaka
   # The name of any input files (use relative path)
   INPUT_FILE: input/test.txt
-  # The name of any output files (use relative paths)
-  OUTPUT_FILE: output/test-bruteforce.txt output/test-highvalue.txt output/test-custom.txt
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
