@@ -4,7 +4,8 @@
 #include "SussyBakaRunner.h"
 
 void SussyBakaRunner::loadData(char* inputFile) {
-    l.loadData(inputFile);
+    std::string temp(inputFile);
+    l.loadData(temp);
 }
 
 void SussyBakaRunner::runBruteForce() {
