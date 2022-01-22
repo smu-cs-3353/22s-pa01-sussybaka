@@ -44,7 +44,7 @@ jobs:
       - name: Execute Project
         # This step calls your program with the command line args
         working-directory: ${{github.workspace}}/build
-        run: ${{github.workspace}}/build/${{env.TEST_EXE}} ${{env.INPUT_FILE}} ${{env.OUTPUT_FILE}}
+        run: ${{github.workspace}}/build/${{env.TEST_EXE}}${{env.INPUT_FILE}}
 
       - name: Upload output files to GitHub so they can be reviewed
         # This step zips up the data folder and uploads it to Github for you to review.
