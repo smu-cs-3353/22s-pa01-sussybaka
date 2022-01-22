@@ -25,6 +25,6 @@ int main(int argc, char* argv[]) {
 //    SBR.runHighValue();
 //    SBR.runCustom();
 
-    std::cout << std::endl;
+    std::cout << l.totalPieces << std::endl;
     return 0;
 }

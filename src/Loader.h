@@ -9,12 +9,11 @@
 
 
 class Loader {
-private:
+public:
     std::vector<int> wallDimensions; // The dimensions of the wall
     int totalPieces;     // The total number of pieces to pick from
     std::vector<Picture> pictures;   // Array of information on "totalPieces" number of pictures
 
-public:
     /**
      * Constructors
      */
