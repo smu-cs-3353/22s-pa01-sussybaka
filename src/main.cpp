@@ -19,11 +19,11 @@ int main(int argc, char* argv[]) {
     std::string temp(argv[1]);
     l.loadData(temp);
 
-    SussyBakaRunner SBR;
-    SBR.loadData(argv[1]);
-    SBR.runBruteForce();
-    SBR.runHighValue();
-    SBR.runCustom();
+//    SussyBakaRunner SBR;
+//    SBR.loadData(argv[1]);
+//    SBR.runBruteForce();
+//    SBR.runHighValue();
+//    SBR.runCustom();
 
     std::cout << std::endl;
     return 0;
