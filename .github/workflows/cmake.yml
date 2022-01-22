@@ -16,7 +16,7 @@ env:
   # Must match executable in cmake
   TEST_EXE: 22s-pa01-sussybaka
   # The name of any input files (use relative path)
-  INPUT_FILE: /input/test.txt
+  INPUT_FILE: input/test.txt
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -44,7 +44,7 @@ jobs:
       - name: Execute Project
         # This step calls your program with the command line args
         working-directory: ${{github.workspace}}/build
-        run: ${{github.workspace}}/build/${{env.TEST_EXE}}${{env.INPUT_FILE}}
+        run: ${{github.workspace}}/build/${{env.TEST_EXE}} ${{env.INPUT_FILE}}
 
       - name: Upload output files to GitHub so they can be reviewed
         # This step zips up the data folder and uploads it to Github for you to review.
