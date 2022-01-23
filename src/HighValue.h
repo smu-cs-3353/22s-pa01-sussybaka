@@ -2,6 +2,7 @@
 #define INC_22S_PA01_SUSSYBAKA_HIGHVALUE_H
 
 #include <vector>
+#include <algorithm>
 #include "Picture.h"
 #include "Loader.h"
 #include <bits/stdc++.h>

@@ -26,6 +26,13 @@ public:
      * @return The outstream with the object data sent to it
      */
     friend std::ofstream& operator<< (std::ofstream& out, Picture& pic);
+
+    /**
+     * Overloaded Greater Than Operator
+     * @param compPic Picture being compared against
+     * @return The truth value of the operator
+     */
+    bool operator< (Picture& compPic);
 };
 
 

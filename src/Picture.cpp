@@ -29,3 +29,10 @@ std::ofstream& operator<< (std::ofstream& out, Picture& pic) {
 
     return out;
 }
+
+/****************************************
+ **  Overloaded Greater Than Operator  **
+ ****************************************/
+bool Picture::operator<(Picture &compPic) {
+    return compPic.Value < Value;
+}
