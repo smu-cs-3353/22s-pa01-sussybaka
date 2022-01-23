@@ -13,7 +13,7 @@ void SussyBakaRunner::runBruteForce() {
 }
 
 void SussyBakaRunner::runHighValue() {
-
+    HighValue HV(l);
 }
 
 void SussyBakaRunner::runCustom() {

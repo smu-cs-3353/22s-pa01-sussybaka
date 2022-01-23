@@ -10,45 +10,29 @@
 void HighValue::sortPictures(int index, Loader& data) {
 
     std::sort(data.pictures.begin(), data.pictures.end());
-
+    int curWidth = 0;
+    int i = 0;
 
     // Iterate over all pictures in the vector
-    for (int i = index; i < data.totalPieces; i++) {
-
-        // First finish the sorted vector
-        // Then do best combination and price
-
+    while (curWidth + data.pictures[i].Width < maxWidth) {
         // The current picture in iteration
         Picture curPic = data.pictures[i];
 
-        // Copy the buffer and add a value to it
-        std::vector<Picture> newBuffer = buffer;
-        newBuffer.emplace_back(curPic);
+        // Updating best combo stats
+        bestCombo.emplace_back(curPic);
+        bestPrice = bestPrice + curPic.Value;
+        curWidth = curWidth + curPic.Width;
 
-        // Update the current buffer value
-        float newBufferPrice = bufferPrice + curPic.Value;
+        std::cout << curPic.Value << std::endl;
 
-        // Update the current width of the picture buffer
-        int newWidth = curWidth + curPic.Width;
+        // Update i
+        ++i;
 
-        // If the new width of the picture buffer is greater
+        // If the cur width of the best combo is greater
         // than the maximum width, skip this iteration
-        if (newWidth > maxWidth) {
+        if (curWidth > maxWidth) {
             continue;
         }
-
-        // Add the new buffer to the combinations
-        combinations.emplace_back(newBuffer);
-
-        // If the new buffer price is greater than the current best price,
-        // replace the best price and best buffer with the current ones
-        if (newBufferPrice > bestPrice) {
-            bestCombo = newBuffer;
-            bestPrice = newBufferPrice;
-        }
-
-        // Get all possible combinations using the new buffer
-        findCombos(i+1, newBuffer, newBufferPrice, newWidth, data);
     }
 }
 
@@ -58,14 +42,14 @@ void HighValue::sortPictures(int index, Loader& data) {
  **    Constructors    **
  ***********************/
 HighValue::HighValue() {
-    bestPrice = -1.0;
+    bestPrice = 0.0;
 
     maxHeight = 1000000;
     maxWidth = 1000000;
     maxImages = 100000;
 }
 HighValue::HighValue(Loader &data) {
-    bestPrice = -1.0;
+    bestPrice = 0.0;
     maxImages = 100000;
 
     // Run the high value algorithm
@@ -87,5 +71,5 @@ void HighValue::runHighValue(Loader &data) {
 
     // After sorting and finding high value combination,
     // create the file to store the combination
-    createFile(data.inFileName);
+//    createFile(data.inFileName);
 }

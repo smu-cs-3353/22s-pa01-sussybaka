@@ -5,6 +5,7 @@
 #define INC_22S_PA01_SUSSYBAKA_SUSSYBAKARUNNER_H
 #include "Loader.h"
 #include "BruteForce.h"
+#include "HighValue.h"
 
 class SussyBakaRunner {
 

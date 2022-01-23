@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
     SussyBakaRunner SBR;
     SBR.loadData(argv[1]);
     SBR.runBruteForce();
-//    SBR.runHighValue();
+    SBR.runHighValue();
 //    SBR.runCustom();
 
     return 0;
