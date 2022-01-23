@@ -1,13 +1,19 @@
+// Trevor Dowohm
+// Gabriel Mongaras
+// Algoworithms
 #include "BruteForce.h"
 
+// Private Fuwunctions
 
-
-/**********************
- **    findCombos    **
+ /*********************
+ **   findCombowos   **
  *********************/
+
 void BruteForce::findCombos(int index, std::vector<Picture>& buffer, float& bufferPrice, int& curWidth, Loader& data) {
-    // Iterate over all pictures in the vector
+
+    // Iterate owover all pictures in the vector
     for (int i = index; i < data.totalPieces; i++) {
+
         // The current picture in iteration
         Picture curPic = data.pictures[i];
 
@@ -15,7 +21,7 @@ void BruteForce::findCombos(int index, std::vector<Picture>& buffer, float& buff
         std::vector<Picture> newBuffer = buffer;
         newBuffer.emplace_back(curPic);
 
-        // Update the current buffer value
+        // Update the current buwuffer value
         float newBufferPrice = bufferPrice + curPic.Value;
 
         // Update the current width of the picture buffer
@@ -42,12 +48,12 @@ void BruteForce::findCombos(int index, std::vector<Picture>& buffer, float& buff
     }
 }
 
-
-
-/**********************
+ /*********************
  **    createFile    **
  *********************/
+
 void BruteForce::createFile(std::string& inFileName) {
+
     // Remove all characters at the end of the filename after the "." character
     std::string outFileName = inFileName;
     while (outFileName[outFileName.size()-1] != '.') { // Remove the ending
@@ -55,8 +61,7 @@ void BruteForce::createFile(std::string& inFileName) {
     }
     outFileName = outFileName.substr(0, outFileName.size()-1);
 
-    // Remove all characters after the "/" character and store each character
-    // for later use
+    // Remove all characters after the "/" character and store each character for later use
     std::string subOutFileName;
     while (outFileName[outFileName.size()-1] != '/') { // Get the name of the file
         subOutFileName += outFileName[outFileName.size()-1];
@@ -91,51 +96,39 @@ void BruteForce::createFile(std::string& inFileName) {
     std::cout << std::endl;
 }
 
+// Puwublic Functions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/************************
+ /***********************
  **    Constructors    **
  ***********************/
+
+// Default constructor
 BruteForce::BruteForce() {
     bestPrice = -1.0;
-
     maxHeight = 1000000;
     maxWidth = 1000000;
     maxImages = 100000;
 }
+
+// Runs the Bruwute Force Algorithm
 BruteForce::BruteForce(Loader &data) {
     bestPrice = -1.0;
     maxImages = 100000;
-
-    // Run the brute force algorithm
     runBruteForce(data);
 }
 
-
-
-/*************************
+ /************************
  **    runBruteForce    **
  ************************/
+
 void BruteForce::runBruteForce(Loader &data) {
+
     // Store the maximum width and height
     maxWidth = data.wallDimensions[0];
     maxHeight = data.wallDimensions[1];
 
-    // Find all possible combinations the data can make up
-    // but keeping the current size of all pictures below
-    // the maximum size
+    // Find all possible combinations the data can make up but
+    // keeping the current size of all pictures below the maximum size
     std::vector<Picture> buffer;
     float bufferPrice = 0.0;
     int curWidth = 0;
