@@ -48,24 +48,23 @@ void BruteForce::findCombos(int index, std::vector<Picture>& buffer, float& buff
  **    createFile    **
  *********************/
 void BruteForce::createFile(std::string& inFileName) {
-    // Create the new filename to write to
+    // Remove all characters at the end of the filename after the "." character
     std::string outFileName = inFileName;
-    if (outFileName[0] == '/') {
-        outFileName = outFileName.substr(1, outFileName.size());
-    }
     while (outFileName[outFileName.size()-1] != '.') { // Remove the ending
         outFileName = outFileName.substr(0, outFileName.size()-1);
     }
     outFileName = outFileName.substr(0, outFileName.size()-1);
 
+    // Remove all characters after the "/" character and store each character
+    // for later use
     std::string subOutFileName;
     while (outFileName[outFileName.size()-1] != '/') { // Get the name of the file
         subOutFileName += outFileName[outFileName.size()-1];
         outFileName = outFileName.substr(0, outFileName.size()-1);
-        //outFileName = outFileName.substr(1, outFileName.size());
     }
     reverse(subOutFileName.begin(), subOutFileName.end());
 
+    // Create the final output filename
     subOutFileName = std::string("output/") + subOutFileName + std::string("-bruteforce.txt");
     if (outFileName[0] == '.' && outFileName[1] == '.') {
         subOutFileName = std::string("../") + subOutFileName;
