@@ -1,25 +1,30 @@
+// Trevor Dowohm
+// Gabriel Mongaras
+// Algoworithms
 #include "Loader.h"
 
-
-
-
-/************************
+ /***********************
  **    Constructors    **
  ***********************/
+
+// Default constructor
 Loader::Loader() {
     totalPieces = 0;
 }
+
+// Overloaded constructor
 Loader::Loader(std::string& fileName) {
     totalPieces = 0;
     loadData(fileName);
 }
 
-
-
-/********************
+ /*******************
  **    loadData    **
  *******************/
+
+// Loads the data from the input file
 void Loader::loadData(std::string &fileName) {
+
     // Store the file name
     inFileName = fileName;
 
@@ -30,8 +35,6 @@ void Loader::loadData(std::string &fileName) {
     if (!inFile) {
         throw std::runtime_error("Input file not found");
     }
-
-
 
     // Buffer to read in a line
     std::string line;
@@ -55,15 +58,14 @@ void Loader::loadData(std::string &fileName) {
         // Break up the line
         temp = tokStr(line, " ");
 
-        // Get the rank of the picture
+        // Get the rank of the picture (Rank function)
         double rank = std::pow(std::stoi(temp[2]), 2)/(wallDimensions[0]*std::stof(temp[1]));
 
         // Store the picture information
         pictures.emplace_back(Picture(std::stoi(temp[0]), std::stof(temp[1]), std::stoi(temp[2]), std::stoi(temp[3]), rank));
     }
 
-
-
     // Close the file
     inFile.close();
+
 }
