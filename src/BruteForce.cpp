@@ -57,22 +57,26 @@ void BruteForce::createFile(std::string& inFileName) {
         outFileName = outFileName.substr(0, outFileName.size()-1);
     }
     outFileName = outFileName.substr(0, outFileName.size()-1);
-    std::cout << "1" << outFileName << std::endl;
-    while (outFileName[0] != '/') { // Remove the beginning directory name
-        std::cout << "2" << outFileName << std::endl;
-        outFileName = outFileName.substr(1, outFileName.size());
+
+    std::string subOutFileName;
+    while (outFileName[outFileName.size()-1] != '/') { // Get the name of the file
+        subOutFileName += outFileName[outFileName.size()-1];
+        outFileName = outFileName.substr(0, outFileName.size()-1);
+        //outFileName = outFileName.substr(1, outFileName.size());
     }
-    std::cout << "3" << outFileName << std::endl;
-    outFileName = outFileName.substr(1, outFileName.size());
-    std::cout << "4" << outFileName << std::endl;
-    outFileName = std::string("output/") + outFileName + std::string("-bruteforce.txt");
+    reverse(subOutFileName.begin(), subOutFileName.end());
+
+    subOutFileName = std::string("output/") + subOutFileName + std::string("-bruteforce.txt");
+    if (outFileName[0] == '.' && outFileName[1] == '.') {
+        subOutFileName = std::string("../") + subOutFileName;
+    }
 
     // Open a file for writing
-    std::ofstream outFile(outFileName);
+    std::ofstream outFile(subOutFileName);
 
     // If the file could not be opened, throw an error
     if (!outFile) {
-        throw std::runtime_error("Outfile named " + outFileName + " could not be opened.");
+        throw std::runtime_error("Outfile named " + subOutFileName + " could not be opened.");
     }
 
     // Add the price of the best picture combination to the file
