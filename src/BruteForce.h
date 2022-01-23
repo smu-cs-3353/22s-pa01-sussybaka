@@ -19,7 +19,7 @@ private:
 
     // Combination of pictures with the highest price
     std::vector<Picture> bestCombo;
-    int bestPrice;
+    float bestPrice;
 
 
 
@@ -31,13 +31,21 @@ private:
      * @param index Current index being iterated over in the Loader data vector
      * @param buffer Buffer to hold the current combination when iterating
      *               over all possible combinations
+     * @param bufferPrice The price of the current combination in the buffer
      * @param curWidth The current width of the picture buffer
      * @param data A Loader object with the loaded data
      */
-    void findCombos(int index, std::vector<Picture>& buffer, int curWidth, Loader& data);
+    void findCombos(int index, std::vector<Picture>& buffer, float& bufferPrice, int& curWidth, Loader& data);
 
 
 public:
+    /**
+     * Constructors
+     */
+    BruteForce();
+    BruteForce(Loader& data);
+
+
     /**
      * runBruteForce Method
      * Find the best possible combination using brute force
