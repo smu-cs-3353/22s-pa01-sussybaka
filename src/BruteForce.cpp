@@ -45,6 +45,7 @@ void BruteForce::findCombos(int index, std::vector<Picture>& buffer, float& buff
 
         // Get all possible combinations using the new buffer
         findCombos(i+1, newBuffer, newBufferPrice, newWidth, data);
+
     }
 }
 
