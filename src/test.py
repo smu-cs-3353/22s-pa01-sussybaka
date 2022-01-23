@@ -1,6 +1,5 @@
 import random
 
-
 def createFile(numPics, minWidth, maxWidth, minHeight, maxHeight, minVal, maxVal, Filename):
     file = open(Filename, 'w')
     file.write(f"{maxWidth} {maxHeight}\n")
@@ -15,6 +14,7 @@ def createFile(numPics, minWidth, maxWidth, minHeight, maxHeight, minVal, maxVal
     randVal = round(random.uniform(minVal, maxVal), 2)
     file.write(f"{numPics} {randVal} {randWidth} {randHeight}")
     file.close()
+
 
 
 

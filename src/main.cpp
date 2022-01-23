@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
     SBR.loadData(argv[1]);
     SBR.runBruteForce();
     SBR.runHighValue();
-//    SBR.runCustom();
+    SBR.runCustom();
 
     return 0;
 }

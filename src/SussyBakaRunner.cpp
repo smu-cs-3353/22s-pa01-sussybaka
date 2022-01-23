@@ -17,5 +17,5 @@ void SussyBakaRunner::runHighValue() {
 }
 
 void SussyBakaRunner::runCustom() {
-
+    Custom C(l);
 }
