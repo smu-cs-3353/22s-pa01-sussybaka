@@ -1,6 +1,6 @@
-// Trevor Dohm
+// Trevor Dowohm
 // Gabriel Mongaras
-// Algorithms
+// Algoworithms
 #include "Picture.h"
 
  /***********************

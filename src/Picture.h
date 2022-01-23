@@ -1,6 +1,6 @@
-// Trevor Dohm
+// Trevor Dowohm
 // Gabriel Mongaras
-// Algorithms
+// Algoworithms
 #ifndef INC_22S_PA01_SUSSYBAKA_PICTURE_H
 #define INC_22S_PA01_SUSSYBAKA_PICTURE_H
 
