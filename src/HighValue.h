@@ -13,9 +13,6 @@ private:
     int maxHeight;
     int maxImages;
 
-    // Vector to hold all possible combinations
-    std::vector<std::vector<Picture>> combinations;
-
     // Combination of pictures with the highest price
     std::vector<Picture> bestCombo;
     float bestPrice;
@@ -25,16 +22,12 @@ private:
 
 
     /**
-     * findCombos Method
+     * sortPictures Method
      * Recursive function to find all possible combinations the data can form.
      * @param index Current index being iterated over in the Loader data vector
-     * @param buffer Buffer to hold the current combination when iterating
-     *               over all possible combinations
-     * @param bufferPrice The price of the current combination in the buffer
-     * @param curWidth The current width of the picture buffer
      * @param data A Loader object with the loaded data
      */
-    void findCombos(int index, std::vector<Picture>& buffer, float& bufferPrice, int& curWidth, Loader& data);
+    void sortPictures(int index, Loader& data);
 
     /**
      * createFile
@@ -48,8 +41,8 @@ public:
     /**
      * Constructors
      */
-    BruteForce();
-    BruteForce(Loader& data);
+    HighValue();
+    HighValue(Loader& data);
 
 
     /**
@@ -57,12 +50,7 @@ public:
      * Find the best possible combination using brute force
      * @param data A Loader object with the loaded data
      */
-    void runBruteForce(Loader& data);
+    void runHighValue(Loader& data);
 };
-
-
-
-};
-
 
 #endif //INC_22S_PA01_SUSSYBAKA_HIGHVALUE_H
