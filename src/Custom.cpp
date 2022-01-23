@@ -1,15 +1,25 @@
-#include "HighValue.h"
+#include "Custom.h"
+
+
+
+
 
 /************************
  **    sortPictures    **
  ***********************/
-void HighValue::sortPictures(Loader& data) {
-    // Sort the pictures using
-    std::sort(data.pictures.begin(), data.pictures.end());
+bool sortFunction(Picture &pic1, Picture &pic2) {
+    return pic1.rankVal < pic2.rankVal;
+}
+void Custom::sortPictures(Loader& data) {
+    // Sort the pictures using the
+    std::sort(data.pictures.begin(), data.pictures.end(), sortFunction);
+
+
     int curWidth = 0;
     int index = 0;
 
-    // Iterate over all pictures in the vector
+    // Iterate over all pictures in the vector until the max width
+    // is reached
     while (curWidth + data.pictures[index].Width < maxWidth) {
         // The current picture in iteration
         Picture curPic = data.pictures[index];
@@ -20,7 +30,7 @@ void HighValue::sortPictures(Loader& data) {
         curWidth = curWidth + curPic.Width;
 
         // Update iterator
-        ++index;
+        index++;
 
         // If the cur width of the best combo is greater
         // than the maximum width, skip this iteration
@@ -33,7 +43,7 @@ void HighValue::sortPictures(Loader& data) {
 /**********************
  **    createFile    **
  *********************/
-void HighValue::createFile(std::string& inFileName) {
+void Custom::createFile(std::string& inFileName) {
     // Remove all characters at the end of the filename after the "." character
     std::string outFileName = inFileName;
     while (outFileName[outFileName.size()-1] != '.') { // Remove the ending
@@ -51,7 +61,7 @@ void HighValue::createFile(std::string& inFileName) {
     reverse(subOutFileName.begin(), subOutFileName.end());
 
     // Create the final output filename
-    subOutFileName = std::string("output/") + subOutFileName + std::string("-highvalue.txt");
+    subOutFileName = std::string("output/") + subOutFileName + std::string("-custom.txt");
     if (outFileName[0] == '.' && outFileName[1] == '.') {
         subOutFileName = std::string("../") + subOutFileName;
     }
@@ -80,14 +90,14 @@ void HighValue::createFile(std::string& inFileName) {
 /************************
  **    Constructors    **
  ***********************/
-HighValue::HighValue() {
+Custom::Custom() {
     bestPrice = 0.0;
 
     maxHeight = 1000000;
     maxWidth = 1000000;
     maxImages = 100000;
 }
-HighValue::HighValue(Loader &data) {
+Custom::Custom(Loader &data) {
     bestPrice = 0.0;
     maxImages = 100000;
 
@@ -100,12 +110,12 @@ HighValue::HighValue(Loader &data) {
 /************************
  **    runHighValue    **
  ***********************/
-void HighValue::runHighValue(Loader &data) {
+void Custom::runHighValue(Loader &data) {
     // Store the maximum width and height
     maxWidth = data.wallDimensions[0];
     maxHeight = data.wallDimensions[1];
 
-    // Run sorter to find highest priced pictures
+    // Run sorter to find highest ranked images
     sortPictures(data);
 
     // After sorting and finding high value combination,

@@ -10,13 +10,14 @@ public:
     float Value; // The value of the picture
     int Width; // The width of the picture
     int Height; // The height of the picture
+    double rankVal; // The ranke value of the picture
 
 
     /**
      * Constructors
      */
     Picture();
-    Picture(int id, float val, int width, int height);
+    Picture(int id, float val, int width, int height, double rank);
 
 
     /**
@@ -33,6 +34,7 @@ public:
      * @return The truth value of the operator
      */
     bool operator< (Picture& compPic);
+    bool operator> (Picture& compPic);
 };
 
 
