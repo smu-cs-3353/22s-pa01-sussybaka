@@ -6,6 +6,7 @@
 #include "Loader.h"
 #include "BruteForce.h"
 #include "HighValue.h"
+#include "Custom.h"
 
 class SussyBakaRunner {
 

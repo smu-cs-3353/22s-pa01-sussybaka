@@ -1,5 +1,6 @@
-#ifndef INC_22S_PA01_SUSSYBAKA_HIGHVALUE_H
-#define INC_22S_PA01_SUSSYBAKA_HIGHVALUE_H
+#ifndef INC_22S_PA01_SUSSYBAKA_CUSTOM_H
+#define INC_22S_PA01_SUSSYBAKA_CUSTOM_H
+
 
 #include <vector>
 #include <algorithm>
@@ -7,7 +8,8 @@
 #include "Loader.h"
 #include <bits/stdc++.h>
 
-class HighValue {
+
+class Custom {
 private:
     // Max values
     int maxWidth;
@@ -41,8 +43,8 @@ public:
     /**
      * Constructors
      */
-    HighValue();
-    HighValue(Loader& data);
+    Custom();
+    Custom(Loader& data);
 
 
     /**
@@ -53,4 +55,6 @@ public:
     void runHighValue(Loader& data);
 };
 
-#endif //INC_22S_PA01_SUSSYBAKA_HIGHVALUE_H
+
+
+#endif //INC_22S_PA01_SUSSYBAKA_CUSTOM_H

@@ -28,7 +28,7 @@ void Loader::loadData(std::string &fileName) {
 
     // If the file is not open, raise an error
     if (!inFile) {
-        throw std::runtime_error("File not found");
+        throw std::runtime_error("Input file not found");
     }
 
 
@@ -55,8 +55,11 @@ void Loader::loadData(std::string &fileName) {
         // Break up the line
         temp = tokStr(line, " ");
 
+        // Get the rank of the picture
+        double rank = std::pow(std::stoi(temp[2]), 2)/(wallDimensions[0]*std::stof(temp[1]));
+
         // Store the picture information
-        pictures.emplace_back(Picture(std::stoi(temp[0]), std::stof(temp[1]), std::stoi(temp[2]), std::stoi(temp[3])));
+        pictures.emplace_back(Picture(std::stoi(temp[0]), std::stof(temp[1]), std::stoi(temp[2]), std::stoi(temp[3]), rank));
     }
 
 
