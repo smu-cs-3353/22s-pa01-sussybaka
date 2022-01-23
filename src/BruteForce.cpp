@@ -57,10 +57,14 @@ void BruteForce::createFile(std::string& inFileName) {
         outFileName = outFileName.substr(0, outFileName.size()-1);
     }
     outFileName = outFileName.substr(0, outFileName.size()-1);
+    std::cout << "1" << outFileName << std::endl;
     while (outFileName[0] != '/') { // Remove the beginning directory name
+        std::cout << "2" << outFileName << std::endl;
         outFileName = outFileName.substr(1, outFileName.size());
     }
+    std::cout << "3" << outFileName << std::endl;
     outFileName = outFileName.substr(1, outFileName.size());
+    std::cout << "4" << outFileName << std::endl;
     outFileName = std::string("output/") + outFileName + std::string("-bruteforce.txt");
 
     // Open a file for writing
