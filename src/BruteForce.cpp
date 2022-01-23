@@ -136,4 +136,5 @@ void BruteForce::runBruteForce(Loader &data) {
 
     // With the best combination found, send the contents to an output file
     createFile(data.inFileName);
+
 }

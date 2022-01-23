@@ -1,16 +1,24 @@
+// Trevor Dowohm
+// Gabriel Mongaras
+// Algoworithms
 #include "HighValue.h"
 
-/************************
+// Private Fuwunctions
+
+ /***********************
  **    sortPictures    **
  ***********************/
+
 void HighValue::sortPictures(Loader& data) {
-    // Sort the pictures using
+
+    // Sort the pictures using the rank
     std::sort(data.pictures.begin(), data.pictures.end());
     int curWidth = 0;
     int index = 0;
 
     // Iterate over all pictures in the vector
     while (curWidth + data.pictures[index].Width < maxWidth) {
+
         // The current picture in iteration
         Picture curPic = data.pictures[index];
 
@@ -30,10 +38,12 @@ void HighValue::sortPictures(Loader& data) {
     }
 }
 
-/**********************
+ /*********************
  **    createFile    **
  *********************/
+
 void HighValue::createFile(std::string& inFileName) {
+
     // Remove all characters at the end of the filename after the "." character
     std::string outFileName = inFileName;
     while (outFileName[outFileName.size()-1] != '.') { // Remove the ending
@@ -76,31 +86,33 @@ void HighValue::createFile(std::string& inFileName) {
     outFile.close();
 }
 
+// Puwublic Functions
 
-/************************
+ /***********************
  **    Constructors    **
  ***********************/
+
+// Default constructor
 HighValue::HighValue() {
     bestPrice = 0.0;
-
     maxHeight = 1000000;
     maxWidth = 1000000;
     maxImages = 100000;
 }
+
+// Runs the High Valuwue Algorithm
 HighValue::HighValue(Loader &data) {
     bestPrice = 0.0;
     maxImages = 100000;
-
-    // Run the high value algorithm
     runHighValue(data);
 }
 
-
-
-/************************
+ /***********************
  **    runHighValue    **
  ***********************/
+
 void HighValue::runHighValue(Loader &data) {
+
     // Store the maximum width and height
     maxWidth = data.wallDimensions[0];
     maxHeight = data.wallDimensions[1];
@@ -111,4 +123,5 @@ void HighValue::runHighValue(Loader &data) {
     // After sorting and finding high value combination,
     // create the file to store the combination
     createFile(data.inFileName);
+
 }
