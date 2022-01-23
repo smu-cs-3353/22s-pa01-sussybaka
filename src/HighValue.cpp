@@ -11,7 +11,7 @@
 
 void HighValue::sortPictures(Loader& data) {
 
-    // Sort the pictures using the rank
+    // Sort the pictures using the value
     std::sort(data.pictures.begin(), data.pictures.end());
     int curWidth = 0;
     int index = 0;
@@ -51,8 +51,7 @@ void HighValue::createFile(std::string& inFileName) {
     }
     outFileName = outFileName.substr(0, outFileName.size()-1);
 
-    // Remove all characters after the "/" character and store each character
-    // for later use
+    // Remove all characters after the "/" character and store each character for later use
     std::string subOutFileName;
     while (outFileName[outFileName.size()-1] != '/') { // Get the name of the file
         subOutFileName += outFileName[outFileName.size()-1];
@@ -84,6 +83,7 @@ void HighValue::createFile(std::string& inFileName) {
 
     // Close the file
     outFile.close();
+
 }
 
 // Puwublic Functions

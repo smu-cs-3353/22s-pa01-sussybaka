@@ -52,7 +52,7 @@ public:
      * Find the best possible combination using brute force
      * @param data A Loader object with the loaded data
      */
-    void runHighValue(Loader& data);
+    void runCustom(Loader& data);
 };
 
 

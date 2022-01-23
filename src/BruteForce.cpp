@@ -94,6 +94,7 @@ void BruteForce::createFile(std::string& inFileName) {
 
     // Close the file
     outFile.close();
+
 }
 
 // Puwublic Functions
