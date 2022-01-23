@@ -5,6 +5,8 @@
 #include "Loader.h"
 #include "SussyBakaRunner.h"
 
+
+
 // Hewwo! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ Dis is our new pwoject! We worked
 // weally hawd on it and i hope you enjoy! ★~(◡﹏◕✿)
 int main(int argc, char* argv[]) {
@@ -19,12 +21,11 @@ int main(int argc, char* argv[]) {
     std::string temp(argv[1]);
     l.loadData(temp);
 
-//    SussyBakaRunner SBR;
-//    SBR.loadData(argv[1]);
-//    SBR.runBruteForce();
+    SussyBakaRunner SBR;
+    SBR.loadData(argv[1]);
+    SBR.runBruteForce();
 //    SBR.runHighValue();
 //    SBR.runCustom();
 
-    std::cout << l.totalPieces << std::endl;
     return 0;
 }

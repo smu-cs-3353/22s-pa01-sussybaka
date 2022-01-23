@@ -18,3 +18,14 @@ Picture::Picture(int id, float val, int width, int height) {
     Width = width;
     Height = height;
 }
+
+
+
+/*****************************************
+ **    Overloaded Outstream Operator    **
+ ****************************************/
+std::ofstream& operator<< (std::ofstream& out, Picture& pic) {
+    out << pic.ID << " " << pic.Value << " " << pic.Width << " " << pic.Height << std::endl;
+
+    return out;
+}

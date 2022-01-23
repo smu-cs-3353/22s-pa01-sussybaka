@@ -3,8 +3,10 @@
 
 
 #include "Picture.h"
-#include <iostream>
+#include <fstream>
 #include <vector>
+#include <iostream>
+#include "tokStr.h"
 
 
 
@@ -13,6 +15,7 @@ public:
     std::vector<int> wallDimensions; // The dimensions of the wall
     int totalPieces;     // The total number of pieces to pick from
     std::vector<Picture> pictures;   // Array of information on "totalPieces" number of pictures
+    std::string inFileName; // The name of the file to read in
 
     /**
      * Constructors

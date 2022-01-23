@@ -9,7 +9,7 @@ void SussyBakaRunner::loadData(char* inputFile) {
 }
 
 void SussyBakaRunner::runBruteForce() {
-
+    BruteForce BF(l);
 }
 
 void SussyBakaRunner::runHighValue() {

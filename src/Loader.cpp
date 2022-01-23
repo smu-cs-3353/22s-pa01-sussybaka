@@ -1,7 +1,4 @@
 #include "Loader.h"
-#include <iostream>
-#include <fstream>
-#include "tokStr.h"
 
 
 
@@ -10,10 +7,10 @@
  **    Constructors    **
  ***********************/
 Loader::Loader() {
-    wallDimensions;
+    totalPieces = 0;
 }
 Loader::Loader(std::string& fileName) {
-    wallDimensions;
+    totalPieces = 0;
     loadData(fileName);
 }
 
@@ -23,6 +20,9 @@ Loader::Loader(std::string& fileName) {
  **    loadData    **
  *******************/
 void Loader::loadData(std::string &fileName) {
+    // Store the file name
+    inFileName = fileName;
+
     // Open file to load in the data
     std::ifstream inFile(fileName);
 
