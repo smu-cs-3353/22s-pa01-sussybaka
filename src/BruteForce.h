@@ -37,6 +37,13 @@ private:
      */
     void findCombos(int index, std::vector<Picture>& buffer, float& bufferPrice, int& curWidth, Loader& data);
 
+    /**
+     * createFile
+     * Creates the output file for the best combination found
+     * @param inFileName The input file name that will be adjusted for the output file
+     */
+    void createFile(std::string& inFileName);
+
 
 public:
     /**

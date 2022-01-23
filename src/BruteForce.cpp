@@ -44,6 +44,45 @@ void BruteForce::findCombos(int index, std::vector<Picture>& buffer, float& buff
 
 
 
+/**********************
+ **    createFile    **
+ *********************/
+void BruteForce::createFile(std::string& inFileName) {
+    // Create the new filename to write to
+    std::string outFileName = inFileName;
+    while (outFileName[outFileName.size()-1] != '.') { // Remove the ending
+        outFileName = outFileName.substr(0, outFileName.size()-1);
+    }
+    outFileName = outFileName.substr(0, outFileName.size()-1);
+    while (outFileName[0] != '/') { // Remove the beginning directory name
+        outFileName = outFileName.substr(1, outFileName.size());
+    }
+    outFileName = outFileName.substr(1, outFileName.size());
+    outFileName = std::string("output/") + outFileName + std::string("-bruteforce.txt");
+
+    // Open a file for writing
+    std::ofstream outFile(outFileName);
+
+    // If the file could not be opened, throw an error
+    if (!outFile) {
+        throw std::runtime_error("Outfile named " + outFileName + " could not be opened.");
+    }
+
+    // Add the price of the best picture combination to the file
+    outFile << bestPrice << std::endl;
+
+    // Add each image in the best picture combination to the file
+    for (Picture& p : bestCombo) {
+        outFile << p;
+    }
+
+    // Close the file
+    outFile.close();
+    std::cout << std::endl;
+}
+
+
+
 
 
 
@@ -82,4 +121,7 @@ void BruteForce::runBruteForce(Loader &data) {
     float bufferPrice = 0.0;
     int curWidth = 0;
     findCombos(0, buffer, bufferPrice, curWidth, data);
+
+    // With the best combination found, send the contents to an output file
+    createFile(data.inFileName);
 }
