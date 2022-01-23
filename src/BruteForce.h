@@ -4,6 +4,7 @@
 #include <vector>
 #include "Picture.h"
 #include "Loader.h"
+#include <bits/stdc++.h>
 
 
 
