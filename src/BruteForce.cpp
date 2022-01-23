@@ -50,6 +50,9 @@ void BruteForce::findCombos(int index, std::vector<Picture>& buffer, float& buff
 void BruteForce::createFile(std::string& inFileName) {
     // Create the new filename to write to
     std::string outFileName = inFileName;
+    if (outFileName[0] == '/') {
+        outFileName = outFileName.substr(1, outFileName.size());
+    }
     while (outFileName[outFileName.size()-1] != '.') { // Remove the ending
         outFileName = outFileName.substr(0, outFileName.size()-1);
     }
