@@ -58,7 +58,6 @@ public:
     BruteForce();
     BruteForce(Loader& data);
 
-
     /**
      * runBruteForce Method! (づ｡◕‿‿◕｡)づ ＼（＾○＾）人（＾○＾）／
      * Find the best possible combination using brute force
