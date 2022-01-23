@@ -16,7 +16,10 @@ int main(int argc, char* argv[]) {
         std::cout << "./22s-pa01-sussybaka [Input File Name]" << std::endl;
         return 1;
     }
-
+    // Create a loader object using the given filename
+    Loader l;
+    std::string temp(argv[1]);
+    l.loadData(temp);
     SussyBakaRunner SBR;
 
     // Load the data
