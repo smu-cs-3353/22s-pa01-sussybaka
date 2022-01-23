@@ -110,9 +110,14 @@ void BruteForce::createFile(std::string& inFileName) {
  ***********************/
 BruteForce::BruteForce() {
     bestPrice = -1.0;
+
+    maxHeight = 1000000;
+    maxWidth = 1000000;
+    maxImages = 100000;
 }
 BruteForce::BruteForce(Loader &data) {
     bestPrice = -1.0;
+    maxImages = 100000;
 
     // Run the brute force algorithm
     runBruteForce(data);
@@ -124,6 +129,10 @@ BruteForce::BruteForce(Loader &data) {
  **    runBruteForce    **
  ************************/
 void BruteForce::runBruteForce(Loader &data) {
+    // Store the maximum width and height
+    maxWidth = data.wallDimensions[0];
+    maxHeight = data.wallDimensions[1];
+
     // Find all possible combinations the data can make up
     // but keeping the current size of all pictures below
     // the maximum size

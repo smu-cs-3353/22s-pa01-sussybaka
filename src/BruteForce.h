@@ -11,9 +11,9 @@
 class BruteForce {
 private:
     // Max values
-    const int maxWidth = 1000000;
-    const int maxHeight = 1000000;
-    const int maxImages = 100000;
+    int maxWidth;
+    int maxHeight;
+    int maxImages;
 
     // Vector to hold all possible combinations
     std::vector<std::vector<Picture>> combinations;
