@@ -24,10 +24,14 @@ int main(int argc, char* argv[]) {
     SBR.loadData(argv[1]);
     std::cout << "Data Loaded!" << std::endl << std::endl;
 
-    // Run the brute force algorithm
-    std::cout << "Running the Brute Force algorithm..." << std::endl;
-    SBR.runBruteForce();
-    std::cout << "Brute Force Finished!" << std::endl << std::endl;
+    // Run the brute force algorithm if the file is small enough
+    if (SBR.l.totalPieces > 17) {
+        std::cout << "Input too large to run Brute Force" << std::endl << std::endl;
+    } else {
+        std::cout << "Running the Brute Force algorithm..." << std::endl;
+        SBR.runBruteForce();
+        std::cout << "Brute Force Finished!" << std::endl << std::endl;
+    }
 
     // Run the high value algorithm
     std::cout << "Running the High Value algorithm..." << std::endl;

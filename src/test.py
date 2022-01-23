@@ -26,5 +26,5 @@ minHeight = 1
 maxHeight = 768
 minVal = 1
 maxVal = 10000
-Filename = "test.txt"
+Filename = "../input/test.txt"
 createFile(numPics, minWidth, maxWidth, minHeight, maxHeight, minVal, maxVal, Filename)

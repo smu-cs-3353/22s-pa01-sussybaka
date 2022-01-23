@@ -9,11 +9,10 @@
 #include "Custom.h"
 
 class SussyBakaRunner {
-
-private:
+public:
     Loader l;
 
-public:
+    
     void loadData(char*);
     void runBruteForce();
     void runHighValue();
