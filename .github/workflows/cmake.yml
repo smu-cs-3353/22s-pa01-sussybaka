@@ -6,9 +6,9 @@ name: cmake
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ HighValue ]
   pull_request:
-    branches: [ main ]
+    branches: [ HighValue ]
 
 env:
   # Setting the Build type to Debug
@@ -16,7 +16,7 @@ env:
   # Must match executable in cmake
   TEST_EXE: 22s-pa01-sussybaka
   # The name of any input files (use relative path)
-  INPUT_FILE: ../input/test.txt
+  INPUT_FILE: ../input/test2.txt
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
