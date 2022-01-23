@@ -74,7 +74,6 @@ void HighValue::createFile(std::string& inFileName) {
 
     // Close the file
     outFile.close();
-    std::cout << std::endl;
 }
 
 
