@@ -26,7 +26,7 @@ picture width total reaches the maximum width, or wall width. This algorithm is 
 The <strong>Custom Algorithm</strong> we created is similar to the <strong>Most Expensive Picture First Algorithm</strong>, but instead of picking the highest
 value image, we pick the lowest ranked image. The rank of each image can be obtained from the following formula:  
 
-<img src="https://render.githubusercontent.com/render/math?math=\frac{(Image \:\, Width)^2}{(Wall  \:\, Width) * (Image  \:\, Value)}"></br>
+<img src="https://render.githubusercontent.com/render/math?math=\color{white}\Large\frac{(Image \:\, Width)^2}{(Wall  \:\, Width) * (Image  \:\, Value)}"></br>
 
 In this function, we divide the square of the image width by the product of the wall width and the picture value. The formula simply
 gives pictures with a large width and small value a higher rank while giving pictures with a small width and large value a lower rank, causing the latter to be chosen more often. This algorithm takes the same amount of time as the <strong>Most Expensive Picture First Algorithm</strong>, meaning
