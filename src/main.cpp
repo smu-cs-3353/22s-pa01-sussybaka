@@ -1,15 +1,13 @@
-// Trevor Dohm
+// Trevor Dowohm
 // Gabriel Mongaras
-// Algorithms
+// Algoworithms
 #include <iostream>
-#include "Loader.h"
 #include "SussyBakaRunner.h"
-
-
 
 // Hewwo! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ Dis is our new pwoject! We worked
 // weally hawd on it and i hope you enjoy! ★~(◡﹏◕✿)
 int main(int argc, char* argv[]) {
+
     // If argc is less than 2, stop the program
     if (argc < 2) {
         std::cout << "Program must have at least one argument. Usage:" << std::endl;
@@ -44,4 +42,5 @@ int main(int argc, char* argv[]) {
     std::cout << "Custom Finished!" << std::endl;
 
     return 0;
+
 }
