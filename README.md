@@ -36,11 +36,14 @@ it is very fast, and normally generates better, or closer-to-optimal, results th
 
 ## 2.3 - Project Execution
 The following command can be used to run the project: </br>
+
 ./22s-pa01-sussybaka [Input File Name] </br>
-When the code executes, it will read in the specified file name and will output three files, one for each algorithm, to the /output/ directory. To ensure to project runs successfully, make sure the specified input file name is correct in relation to the 22s-pa01-sussybaka project file, and the /output/ directory exists in the same directory as the 22s-pa01-sussybaka project file. If something were to go wrong, the project will give an error message stating the issue.
+
+When the code executes, it reads in the specified file name and outputs three files, one for each algorithm, to the /output/ directory. To ensure to project runs successfully, make sure the specified input file name is correct in relation to the 22s-pa01-sussybaka project file, and the /output/ directory exists in the same directory as the 22s-pa01-sussybaka project file. If something were to go wrong, an error message stating the issue would be displayed.
 
 ## 2.4 - Sample Input
 The following lines are an example of an input file:
+
 ```
 1024 768
 10
@@ -55,6 +58,7 @@ The following lines are an example of an input file:
 9 6 927 1
 10 20 466 1
 ```
+
 The first line specifies the wall length and height. </br>
 The second line specifies the number of pictures to choose from. </br>
 All proceeding lines starting at line 3 represent a picture where each line is broken up into the following parts:
@@ -66,6 +70,7 @@ All proceeding lines starting at line 3 represent a picture where each line is b
 ## 2.5 - Sample Output
 The project will output three different files. Each file is the output from one of the algorithms. The following is an example of test-bruteforce.txt,
 test-highvalue.txt, and test-custom.txt using the sample input from above: </br>
+
 test-bruteforce.txt:
 ```
 46
@@ -85,40 +90,50 @@ test-custom.txt:
 8 4 129 1
 7 26 496 1
 ```
-The first line in the file contains the value of image orientation on the wall. </br>
-The proceeding lines starting at line 2 represent information for each picture chosen to go on the wall. Each picture line is broken up as specified in 
-<strong>section 2.4</strong>.
+
+The first line in the file contains the value of image orientation on the wall, and the proceeding lines starting at line 2 represent information for each picture chosen to go on the wall. Each picture line is broken up as specified in <strong>Section 2.4</strong>.
 
 # 3 - Algorithm Analysis
-The algorithm performance analysis will examine how each of the three algorithms perform, and how they compare against each other.
+The algorithm performance analysis will examine how each of the three algorithms performs, and how they compare against each other.
+
 ## 3.1 - Setting up The Analysis
-To set up the analysis, we took 5 different sample sizes:
+To set up the analysis, we take 5 different sample sizes:
+
 - 10 Pictures
 - 15 Pictures
 - 50 Pictures
 - 100 Pictures
 - 1000 Pictures
+
 Each sample of pictures is split up into 6 different parts where:
-- the maxWidth is 1000 x 2
-- the maxWidth is 2500 x 2
+
+- The maxWidth is 1000 x 2
+- The maxWidth is 2500 x 2
 - The maxWidth is 5000 x 2
-So, in total, there are 30 input sample files that will be used to test the algorithms. Each algorithm will analyze each dataset for a total of 84 results. Brute Force takes too long in the final dataset with 1000 pictures, so it will not be analyzed on that input file.
+
+So, in total, there are 30 input sample files that will be used to test the algorithms. Each algorithm goes through each dataset for a total of 84 results. Brute Force takes too long in the final dataset with 1000 pictures, so it will not be analyzed on that input file.
+
 ## 3.2 - Results
-Below are graphs for each dataset used
+Below are graphs for each dataset:
+
 ![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2010.png)
 ![Size 15 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2015.png)
 ![Size 50 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2050.png)
 ![Size 100 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%20100.png)
 ![Size 1000 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%201000.png)
-In each graph, the different lines represent the different algorithms used. 
-- Blue is Brute Force
-- Orange is The Custom Algorithm
-- Grey is the High-Value Algorithm
 
+In each graph, the different lines represent the different algorithms:
+
+- Blue is the Brute Force Algorithm
+- Orange is the Custom Algorithm
+- Grey is the High Value Algorithm
 
 The trial number is on the x-axis, and the wall value for the algorithm is on the y-axis.</br>
 Below is another plot that shows the relationship among the three algorithms on all datasets.
+
 ![Comparizon of All Algorithms on All Datasets](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Average%20Wall%20Value%20vs.%20Dataset%20Size.png)
-In this graph, each line and color represents a different algorithm. The x-axis represents the dataset size, and the y-axis represents the average value for that data for each algorithm.
+
+In this graph, each line and color represents a different algorithm as shown in the graph key. The x-axis represents the dataset size, and the y-axis represents the average value for that data for each algorithm.
+
 ## 3.3 - Analysis
-As expected, the <strong>High-Value Algorithm</strong> almost always gave the worst wall value, and the <strong>Brute Force Algorithm</strong> always gave the best value. Since the <strong>Brute Force Algorithm</strong> examines every combination, the result will always be the best combination. As for the <strong>High-Value Algorithm</strong>, it is expected to give a result that isn't very great since it only picks the pictures with the highest value and doesn't take the width of the picture into consideration. The <strong>Custom Algorithm</strong> is expected to do better than the <strong>High-Value Algorithm</strong> since it takes both the width of the picture and the value into consideration. Interestingly, the <strong>Custom Algorithm</strong> gave results that were usually very close to the <strong>Brute Force Algorithm</strong> meaning that although it is suboptimal, it is still not a bad choice when choosing an algorithm for this problem.
+As expected, the <strong>High-Value Algorithm</strong> almost always gave the worst combination value, and the <strong>Brute Force Algorithm</strong> always gave the best value. This makes sense, as the <strong>Brute Force Algorithm</strong> examined every combination, meaning the result would always be the best combination. As for the <strong>High-Value Algorithm</strong>, it was noticed that the result wasn't great as it only picked the pictures with the highest value and didn't take the width of the picture into consideration. The <strong>Custom Algorithm</strong>, on the other hand, did much better than the <strong>High-Value Algorithm</strong> since it took both the width of the picture and the value into consideration. Interestingly, the <strong>Custom Algorithm</strong> gave results that were usually very close to the <strong>Brute Force Algorithm</strong> meaning that although it was suboptimal, it was still not a bad choice when choosing an algorithm for this problem, especially with datasets that could not run on the <strong>Brute Force Algorithm</strong>.
