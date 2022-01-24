@@ -85,3 +85,37 @@ test-custom.txt:
 The first line in the file contains the value of image orientation on the wall. </br>
 The proceeding lines starting at line 2 represent information for each picture chosen to go on the wall. Each picture line is broken up as specified
 <strong>in section 2.4</strong>.
+
+# 2 - Algorithm Analysis
+The algorithm performance analysis will examine how each of the three algorithms performs against each other.
+## 2.1 - Setting up The Analysis
+To set up the analysis, we took 5 different sample sizes:
+- 10 Pictures
+- 15 Pictures
+- 50 Pictures
+- 100 Pictures
+- 1000 Pictures
+Each sample of pictures is split up into six different parts where
+- the maxWidth is 1000 x 2
+- the maxWidth is 2500 x 2
+- The maxWidth is 5000 x 2
+So, in total, there are 30 input sample files which will be used to test the algorithms. Each algorithm will analyze each dataset for a total of 84 results. Brute Force takes too long in the final dataset with 1000 pictures, so it will not be analyzed on that input file.
+## 2.2 - Results
+Below are graphs for each dataset used
+![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2010.png)
+![Size 15 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2015.png)
+![Size 50 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2050.png)
+![Size 100 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%20100.png)
+![Size 1000 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%201000.png)
+In each graph, the different lines represent the different algorithms used. 
+- Blue is Brute Force
+- Orange is The Custom Algorithm
+- Grey is the High-Value Algorithm
+
+
+The trial number is on the x-axis, and the wall value for the algorithm is on the y-axis.</br>
+Below is another plot that shows the relationship among the three algorithms on all datasets.
+![Comparizon of All Algorithms on All Datasets](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Average%20Wall%20Value%20vs.%20Dataset%20Size.png)
+In this graph, each line and color represents a different algorithm. The x-axis represents the dataset size, and the y-axis represents the average value for that data for each algorithm.
+## 2.3 - Analysis
+As expected, the <strong>High-Value Algorithm</strong> almost always gave the worst wall value, and the <strong>Brute Force Algorithm</strong> always gave the best value. Since the <strong>Brute Force Algorithm</strong> examines every combination, the result will always be the best combination. As for the <strong>High-Value Algorithm</strong>, it is expected to give a result that isn't very great since it only picks the pictures with the highest value and doesn't take the width of the picture into consideration. The <strong>Custom Algorithm</strong> is expected to do better than the <strong>High-Value Algorithm</strong> since it takes both the width of the picture and the value into consideration. Interestingly, the <strong>Custom Algorithm</strong> gave results that were usually very close to the <strong>Brute Force Algorithm</strong> meaning that although it is suboptimal, it is still not a bad choice when choosing an algorithm for this problem.
