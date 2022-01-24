@@ -19,12 +19,12 @@ def createFile(numPics, minWidth, maxWidth, minHeight, maxHeight, minVal, maxVal
 
 
 
-numPics = 10
+numPics = 1000
 minWidth = 1
-maxWidth = 1024
+maxWidth = 5000
 minHeight = 1
 maxHeight = 768
 minVal = 1
-maxVal = 10000
+maxVal = 100000
 Filename = "../input/test.txt"
 createFile(numPics, minWidth, maxWidth, minHeight, maxHeight, minVal, maxVal, Filename)

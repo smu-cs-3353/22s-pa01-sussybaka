@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
     std::cout << "Data Loaded!" << std::endl << std::endl;
 
     // Run the brute force algorithm if the file is small enough
-    if (SBR.l.totalPieces > 17) {
+    if (SBR.l.totalPieces > 51) {
         std::cout << "Input too large to run Brute Force" << std::endl << std::endl;
     } else {
         std::cout << "Running the Brute Force algorithm..." << std::endl;
