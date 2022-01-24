@@ -4,7 +4,7 @@ Title: Project 1 - The Art Gallery</br>
 Departement: Computer Science</br>
 Professor: Dr. Fontenot</br>
 
-Names: Gabriel Mongaras and Trevor</br>
+Names: Gabriel Mongaras and Trevor Dohm</br>
 Date: 2 / 14 / 2022</br>
 
 Course: Fundamentals of Algorithms</br>
