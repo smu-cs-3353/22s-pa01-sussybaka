@@ -37,9 +37,11 @@ it is very fast, and normally generates better, or closer-to-optimal, results th
 ## 2.3 - Project Execution
 The following command can be used to run the project: </br>
 
-./22s-pa01-sussybaka [Input File Name] </br>
+./22s-pa01-sussybaka [Input File Name] [-b]</br>
 
 When the code executes, it reads in the specified file name and outputs three files, one for each algorithm, to the /output/ directory. To ensure to project runs successfully, make sure the specified input file name is correct in relation to the 22s-pa01-sussybaka project file, and the /output/ directory exists in the same directory as the 22s-pa01-sussybaka project file. If something were to go wrong, an error message stating the issue would be displayed.
+
+The -b flag is used to specify whether the Brute Force Algorithm should be used. If the -b flag is included, the Brute Force Algorithm runs. If the -b flag is not there, then the Brute Force Algorithm is not run.
 
 ## 2.4 - Sample Input
 The following lines are an example of an input file:
@@ -116,11 +118,11 @@ So, in total, there are 30 input sample files that will be used to test the algo
 ## 3.2 - Results
 Below are graphs for each dataset:
 
-![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2010.png)
-![Size 15 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2015.png)
-![Size 50 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%2050.png)
-![Size 100 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%20100.png)
-![Size 1000 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Size%201000.png)
+![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%2010.png)
+![Size 15 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%2015.png)
+![Size 50 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%2050.png)
+![Size 100 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%20100.png)
+![Size 1000 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%201000.png)
 
 In each graph, the different lines represent the different algorithms:
 
@@ -131,7 +133,7 @@ In each graph, the different lines represent the different algorithms:
 The trial number is on the x-axis, and the wall value for the algorithm is on the y-axis.</br>
 Below is another plot that shows the relationship among the three algorithms on all datasets.
 
-![Comparizon of All Algorithms on All Datasets](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs/Average%20Wall%20Value%20vs.%20Dataset%20Size.png)
+![Comparizon of All Algorithms on All Datasets](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Average%20Wall%20Value%20vs.%20Dataset%20Size.png)
 
 In this graph, each line and color represents a different algorithm as shown in the graph key. The x-axis represents the dataset size, and the y-axis represents the average value for that data for each algorithm.
 
