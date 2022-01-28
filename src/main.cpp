@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
     // If argc is less than 2, stop the program
     if (argc < 2) {
         std::cout << "Program must have at least one argument. Usage:" << std::endl;
-        std::cout << "./22s-pa01-sussybaka [Input File Name]" << std::endl;
+        std::cout << "./22s-pa01-sussybaka [Input File Name] [-b]" << std::endl;
         return 1;
     }
 
@@ -22,13 +22,19 @@ int main(int argc, char* argv[]) {
     SBR.loadData(argv[1]);
     std::cout << "Data Loaded!" << std::endl << std::endl;
 
-    // Run the brute force algorithm if the file is small enough
-    if (SBR.l.totalPieces > 51) {
-        std::cout << "Input too large to run Brute Force" << std::endl << std::endl;
-    } else {
-        std::cout << "Running the Brute Force algorithm..." << std::endl;
-        SBR.runBruteForce();
-        std::cout << "Brute Force Finished!" << std::endl << std::endl;
+    // Run the brute force algorithm if the user specified to do so
+    if (argc < 3) {
+        std::cout << "Not Running The Brute Force Algorithm" << std::endl << std::endl;
+    }
+    else {
+        if (std::string(argv[2]) == std::string("-b")) {
+            std::cout << "Running the Brute Force algorithm..." << std::endl;
+            SBR.runBruteForce();
+            std::cout << "Brute Force Finished!" << std::endl << std::endl;
+        }
+        else {
+            std::cout << "Not Running The Brute Force Algorithm" << std::endl << std::endl;
+        }
     }
 
     // Run the high value algorithm
