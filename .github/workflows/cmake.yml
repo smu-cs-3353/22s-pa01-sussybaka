@@ -6,9 +6,9 @@ name: cmake
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ Time-Testing ]
+    branches: [ main ]
   pull_request:
-    branches: [ Time-Testing ]
+    branches: [ main ]
 
 env:
   # Setting the Build type to Debug
