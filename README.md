@@ -115,8 +115,8 @@ Each sample of pictures is split up into 6 different parts where:
 
 So, in total, there are 30 input sample files that will be used to test the algorithms. Each algorithm goes through each dataset for a total of 84 results. Brute Force takes too long in the final dataset with 1000 pictures, so it will not be analyzed on that input file.
 
-## 3.2 - Results
-Below are graphs for each dataset:
+## 3.2 - Results By Value
+Below are graphs for each dataset when comparing the algorithms by the resulting value they produced:
 
 ![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%2010.png)
 ![Size 15 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%2015.png)
@@ -137,10 +137,33 @@ Below is another plot that shows the relationship among the three algorithms on 
 
 In this graph, each line and color represents a different algorithm as shown in the graph key. The x-axis represents the dataset size, and the y-axis represents the average value for that data for each algorithm.
 
-## 3.3 - Analysis
+## 3.3 - Analysis By Value
 As expected, the <strong>High-Value Algorithm</strong> almost always gave the worst combination value, and the <strong>Brute Force Algorithm</strong> always gave the best value. This makes sense, as the <strong>Brute Force Algorithm</strong> examined every combination, meaning the result would always be the best combination. As for the <strong>High-Value Algorithm</strong>, it was noticed that the result wasn't great as it only picked the pictures with the highest value and didn't take the width of the picture into consideration. The <strong>Custom Algorithm</strong>, on the other hand, did much better than the <strong>High-Value Algorithm</strong> since it took both the width of the picture and the value into consideration. Interestingly, the <strong>Custom Algorithm</strong> gave results that were usually very close to the <strong>Brute Force Algorithm</strong> meaning that although it was suboptimal, it was still not a bad choice when choosing an algorithm for this problem, especially with datasets that could not run on the <strong>Brute Force Algorithm</strong>. </br>
 
 An interesting fact the data shows between the algorithms is that the <strong>High-Value Algorithm</strong> gave the same average result no matter the dataset size. The other two algorithms gave a better picture combination score the more the picture dataset size increased. Also, as the dataset size increased, the <strong>High-Value Algorithm</strong> diverged more from the other two algorithms. </br>
+
+## 3.4 - Results By Time
+Below are graphs for each dataset when comparing the algorithms by the resulting time it took the algorithms to get a result:
+
+![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%2010.png)
+![Size 15 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%2015.png)
+![Size 50 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%2050.png)
+![Size 100 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%20100.png)
+![Size 1000 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%201000.png)
+
+In each graph, the different lines represent the different algorithms:
+
+- Blue is the Brute Force Algorithm
+- Orange is the Custom Algorithm
+- Grey is the High Value Algorithm
+
+The trial number is on the x-axis, and the time taken to run the algorithm is on the y-axis.</br>
+Below are plots showing the relationship among the three algorithms on all datasets.
+
+![Comparizon of All Algorithms on All Datasets](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Average%20Time%20To%20Run%20vs.%20Dataset%20Size%20-%201.png)
+![Comparizon of All Algorithms on All Datasets](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Average%20Time%20To%20Run%20vs.%20Dataset%20Size%20-%202.png)
+
+In this graph, each line and color represents a different algorithm as shown in the graph key. The x-axis represents the dataset size, and the y-axis represents the average time for that data for each algorithm.
 
 ### 3.3.1 - Time Complexities
 One of the most important parts of algorithm analysis revolves around time complexities, and how different algorithms may be more accurate, but take much more time to execute. A perfect example of this happening can be seen in this project, in fact, between the <strong>Brute Force Algorithm</strong> and the other two algorithms. While the <strong>Brute Force Algorithm</strong> would take a large time to find the best results, the other two algorithms would find suboptimal results in a short time. 
