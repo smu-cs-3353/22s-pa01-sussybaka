@@ -113,7 +113,7 @@ If you are in the project directory (path ending in /22s-pa01-sussybaka), it wil
 cmake --build cmake-build-debug
 ```
 
-Once finished with this process, the cmake-build-debug folder should have the executable in it. Before you run the executable, make sure that you copy the input and output folders into the cmake-build-debug directory. Add whatever files you'd like into these folders, and you can run them from the command line as described below.
+Once finished with this process, the cmake-build-debug folder should have the executable in it. Before you run the executable, make sure that you copy the input and output folders into the cmake-build-debug directory. Add whatever files you'd like into these folders, and you can run them from the command line as described below. Note that the given input folder has two sample inputs, and the Algorithm Analysis folder has a couple more
 
 ## Project Execution
 
