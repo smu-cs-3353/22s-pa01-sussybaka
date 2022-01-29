@@ -24,13 +24,13 @@
 # Project Description
 
 ## The Problem
-In this project, we aim to use three different algorithms in order to find the most valuable orientation of pictures on a wall, and to analyze differences between said algorithms in terms of time complexities, accuracy, and more.
+In this project, we aim to use three different algorithms in order to find the most valuable orientation of pictures on a wall, and to analyze differences between said algorithms to further our understanding of the inner workings of algorithms.
 
 ## The Algorithms
 
 ### Brute Force Algorithm
 The <strong>Brute Force Algorithm</strong> finds all possible orientations of pictures on the wall. In our implementation, we optimize the algorithm to find only
-the combinations that will fit on the given wall. This algorithm is quite slow for large datasets but works well for small datasets, a behavior that will be discussed in later sections. Since the 
+the combinations that will fit on the given wall. This algorithm is quite slow for large datasets but works well for small datasets, which is a behavior that will be discussed in later sections. Since the 
 algorithm looks at all possible combinations, it will always find the highest value arrangement of pictures on the wall.
 
 ### High-Value Algorithm
@@ -45,8 +45,8 @@ value image, we pick the lowest ranked image. The rank of each image can be obta
 </p>
 
 In this function, we divide the square of the image width by the product of the wall width and the picture value. The formula simply
-gives pictures with a large width and small value a higher rank while giving pictures with a small width and large value a lower rank, causing the latter to be chosen more often. This algorithm takes the same amount of time as the <strong>Most Expensive Picture First Algorithm</strong>, meaning
-it is very fast, and normally generates closer-to-optimal results than the <strong>High-Value Algorithm</strong>.
+gives pictures with a large width and small value a higher rank while giving pictures with a small width and large value a lower rank, causing the latter to be chosen more often. This algorithm takes the same amount of time as the <strong>High-Value Algorithm</strong>, meaning
+it is very fast, and normally generates better, or closer-to-optimal, results than the <strong>High-Value Algorithm</strong>.
 
 # Installation and Execution
 
