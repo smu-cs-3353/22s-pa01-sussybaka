@@ -24,7 +24,7 @@
 # Project Description
 
 ## The Problem
-In this project, we aim to use three different algorithms in order to find the most valuable orientation of pictures on a wall, and to analyze differences between said algorithms to further our understanding of the inner workings of algorithms.
+In this project, we aim to use three different algorithms in order to find the most valuable orientation of pictures on a wall, and to analyze differences between said algorithms to further our understanding of these concepts.
 
 ## The Algorithms
 
