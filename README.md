@@ -68,7 +68,7 @@ First, clone the project from GitHub onto your local machine by pressing the gre
 - Git (Bash)
 - Unzip File
 
-Once you have the repository on your machine, make sure that you locate the folder and know the path to said folder.
+Once you have the repository on your machine, make sure that you locate the folder and know the path.
 
 ## Project Configuration
 
@@ -83,7 +83,7 @@ If you have an IDE available, you may open the project folder in the IDE and bui
 Otherwise, a step-by-step procedure for doing so in the terminal can be found below:
 
 1. Open terminal, type wsl, and navigate into the folder using the path specified by the cloning process.
-2. Once you are in the folder, create a directory entitled "cmake-build-debug." This will give us a place for cmake to work.
+2. Once you are in the folder, create a directory entitled "cmake-build-debug." 
 3. Then, type:
 
 ```bash
