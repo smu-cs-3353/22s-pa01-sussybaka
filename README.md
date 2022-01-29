@@ -66,10 +66,33 @@ Once you have the repository on your machine, make sure that you locate the fold
 
 ## Project Configuration
 
-In this section, we look at building, linking, and creating the executable for this project. If you have an IDE, such as Clion, available, you may open the project folder in the IDE and build the project using the green hammer button located on the top right. Otherwise, a step-by-step procedure for this can be found below:
+In this section, we look at building, linking, and creating the executable for this project. Note that you must have cmake, a compiler, such as gcc, and an environment, such as wsl on your machine. Information about these necessary installations will be listed here:
 
-1. Open terminal, type wsl, and then navigate to the folder using the path specified by the cloning process.
-2. 
+- [CMAKE](https://cmake.org/)
+- [GCC](https://gcc.gnu.org/)
+- [WSL](https://docs.microsoft.com/en-us/windows/wsl/about)
+
+If you have an IDE available, you may open the project folder in the IDE and build in the application. This will create the cmake-build-debug directory and add the necessary files for you. [Clion](https://www.jetbrains.com/clion/features/?source=google&medium=cpc&campaign=11960745263&gclid=Cj0KCQiA6NOPBhCPARIsAHAy2zBRVCJK1PdQabj8I-gOpo-iyXsYsDuNjyX9pUvGl5YcFkaTbC-0W9oaAs5BEALw_wcB) and [Eclipse](https://www.eclipse.org/downloads/) are both good choices.
+
+Otherwise, a step-by-step procedure for doing so in the terminal can be found below:
+
+1. Open terminal, type wsl, and navigate into the folder using the path specified by the cloning process.
+2. Once you are in the folder, create a directory entitled "cmake-build-debug." This will give us a place for our cmake to work in.
+3. Then, type:
+
+```bash
+cmake -S [Project Directory Path] -B [cmake-build-debug path]
+```
+
+If you are in the project directory, it will look something like this:
+
+```bash
+cmake -S ../22s-pa01-sussybaka -B cmake-build-debug
+```
+
+4. You will see some messages about compiler information and configuration. One this is done
+
+Once finished with this process, there should be a cmake-build-debug folder with the necessary files in the project directory. Make sure that you then copy the input and output files into the folder. Add whatever input files you'd like into these folders, and you can run them from the command line.
 
 ## 3.2 - Project Execution
 The following command can be used to run the project: </br>
