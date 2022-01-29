@@ -84,17 +84,29 @@ Otherwise, a step-by-step procedure for doing so in the terminal can be found be
 cmake -S [Project Directory Path] -B [cmake-build-debug path]
 ```
 
-If you are in the project directory, it will look something like this:
+If you are in the project directory (path ending in /22s-pa01-sussybaka), it will look something like this:
 
 ```bash
 cmake -S ../22s-pa01-sussybaka -B cmake-build-debug
 ```
 
-4. You will see some messages about compiler information and configuration. One this is done
+4. You will see some messages about compiler information and configuration. You can check the cmake-build-debug folder to make sure it has been populated with necessary files.
+5. You can now build and link the project to create the executable. Type:
 
-Once finished with this process, there should be a cmake-build-debug folder with the necessary files in the project directory. Make sure that you then copy the input and output files into the folder. Add whatever input files you'd like into these folders, and you can run them from the command line.
+```bash
+cmake --build [cmake-build-debug path]
+```
+
+If you are in the project directory (path ending in /22s-pa01-sussybaka), it will look something like this:
+
+```bash
+cmake --build cmake-build-debug
+```
+
+Once finished with this process, there cmake-build-debug folder should have the executable in it. Before you run the executable, make sure that you copy the input and output folders into the cmake-build-debug directory. Add whatever input files you'd like into these folders, and you can run them from the command line as described below.
 
 ## 3.2 - Project Execution
+
 The following command can be used to run the project: </br>
 
 ```bash
