@@ -1,4 +1,15 @@
-# 1 - General Project Information
+# Contents
+
+- [General Project Information](#general-project-information) 
+- Project Description
+  - The Problem
+  - The Algorithms
+    - Brute Force Algorithm
+    - High-Value Algorithm
+    - Custom Algorithm
+ - [Installation and Execution](#installation-and-execution)
+
+# General Project Information
 
 Title: Project 1 - The Art Gallery</br>
 Department: Computer Science</br>
@@ -10,8 +21,9 @@ Date: 2 / 14 / 2022</br>
 Course: Fundamentals of Algorithms</br>
 Section: CS 3353-001</br>
 
-# 2 - Project Description
-## 2.1 - Problem
+# Project Description
+
+## The Problem
 In this project, we aim to use three different algorithms in order to find the most valuable orientation of pictures on a wall.
 
 ## 2.2 - The Algorithms
@@ -19,11 +31,11 @@ In this project, we aim to use three different algorithms in order to find the m
 The <strong>Brute Force Algorithm</strong> finds all possible orientations of pictures on the wall. In our implementation, we optimize the algorithm to find only
 the combinations that will fit on the given wall. This algorithm is quite slow for large datasets but works well for small datasets. Since the 
 algorithm looks at all possible combinations, it will always find the highest value arrangement of pictures on the wall.
-### 2.2.2 - Most Expensive Picture First Algorithm
-The <strong>Most Expensive Picture First Algorithm</strong> fetches the highest value pictures in the dataset until the current 
-picture width total reaches the maximum width, or wall width. This algorithm is very fast, but it is likely to return a suboptimal arrangement of pictures.
+### 2.2.2 - High-Value Algorithm
+The <strongHigh-Value Algorithm</strong> fetches the highest value pictures in the dataset until the current picture width total reaches the maximum width, 
+or wall width. This algorithm is very fast, but it is likely to return a suboptimal arrangement of pictures.
 ### 2.2.3 - Custom Algorithm
-The <strong>Custom Algorithm</strong> we created is similar to the <strong>Most Expensive Picture First Algorithm</strong>, but instead of picking the highest
+The <strong>Custom Algorithm</strong> we created is similar to the <strong>High-Value Algorithm</strong>, but instead of picking the highest
 value image, we pick the lowest ranked image. The rank of each image can be obtained from the following formula:  
 
 <p align="center">
@@ -34,16 +46,24 @@ In this function, we divide the square of the image width by the product of the 
 gives pictures with a large width and small value a higher rank while giving pictures with a small width and large value a lower rank, causing the latter to be chosen more often. This algorithm takes the same amount of time as the <strong>Most Expensive Picture First Algorithm</strong>, meaning
 it is very fast, and normally generates better, or closer-to-optimal, results than the <strong>Most Expensive Picture First Algorithm</strong>.
 
-## 2.3 - Project Execution
+# Installation and Execution
+
+## 3.1 - Project Installation
+
+
+
+## 3.2 - Project Execution
 The following command can be used to run the project: </br>
 
-./22s-pa01-sussybaka [Input File Name] [-b]</br>
+```bash
+./22s-pa01-sussybaka [Input File Name] [-b]
+```
 
 When the code executes, it reads in the specified file name and outputs three files, one for each algorithm, to the /output/ directory. To ensure to project runs successfully, make sure the specified input file name is correct in relation to the 22s-pa01-sussybaka project file, and the /output/ directory exists in the same directory as the 22s-pa01-sussybaka project file. If something were to go wrong, an error message stating the issue would be displayed.
 
 The -b flag is used to specify whether the Brute Force Algorithm should be used. If the -b flag is included, the Brute Force Algorithm runs. If the -b flag is not there, then the Brute Force Algorithm is not run.
 
-## 2.4 - Sample Input
+## 3.3 - Sample Input
 The following lines are an example of an input file:
 
 ```
@@ -69,7 +89,7 @@ All proceeding lines starting at line 3 represent a picture where each line is b
 - The third number is the width of the picture.
 - The fourth and final number is the height of the image.
 
-## 2.5 - Sample Output
+## 3.4 - Sample Output
 The project will output three different files. Each file is the output from one of the algorithms. The following is an example of test-bruteforce.txt,
 test-highvalue.txt, and test-custom.txt using the sample input from above: </br>
 
@@ -95,10 +115,10 @@ test-custom.txt:
 
 The first line in the file contains the value of image orientation on the wall, and the proceeding lines starting at line 2 represent information for each picture chosen to go on the wall. Each picture line is broken up as specified in <strong>Section 2.4</strong>.
 
-# 3 - Algorithm Analysis
+# 4 - Algorithm Analysis
 The algorithm performance analysis will examine how each of the three algorithms performs, and how they compare against each other.
 
-## 3.1 - Setting up The Analysis
+## 4.1 - Analysis Setup
 To set up the analysis, we take 5 different sample sizes:
 
 - 10 Pictures
@@ -115,7 +135,7 @@ Each sample of pictures is split up into 6 different parts where:
 
 So, in total, there are 30 input sample files that will be used to test the algorithms. Each algorithm goes through each dataset for a total of 84 results. Brute Force takes too long in the final dataset with 1000 pictures, so it will not be analyzed on that input file.
 
-## 3.2 - Results
+## 4.2 - Results
 Below are graphs for each dataset:
 
 ![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%2010.png)
@@ -137,12 +157,12 @@ Below is another plot that shows the relationship among the three algorithms on 
 
 In this graph, each line and color represents a different algorithm as shown in the graph key. The x-axis represents the dataset size, and the y-axis represents the average value for that data for each algorithm.
 
-## 3.3 - Analysis
+## 4.3 - Analysis
 As expected, the <strong>High-Value Algorithm</strong> almost always gave the worst combination value, and the <strong>Brute Force Algorithm</strong> always gave the best value. This makes sense, as the <strong>Brute Force Algorithm</strong> examined every combination, meaning the result would always be the best combination. As for the <strong>High-Value Algorithm</strong>, it was noticed that the result wasn't great as it only picked the pictures with the highest value and didn't take the width of the picture into consideration. The <strong>Custom Algorithm</strong>, on the other hand, did much better than the <strong>High-Value Algorithm</strong> since it took both the width of the picture and the value into consideration. Interestingly, the <strong>Custom Algorithm</strong> gave results that were usually very close to the <strong>Brute Force Algorithm</strong> meaning that although it was suboptimal, it was still not a bad choice when choosing an algorithm for this problem, especially with datasets that could not run on the <strong>Brute Force Algorithm</strong>. </br>
 
 An interesting fact the data shows between the algorithms is that the <strong>High-Value Algorithm</strong> gave the same average result no matter the dataset size. The other two algorithms gave a better picture combination score the more the picture dataset size increased. Also, as the dataset size increased, the <strong>High-Value Algorithm</strong> diverged more from the other two algorithms. </br>
 
-### 3.3.1 - Time Complexities
+### 4.3.1 - Time Complexities
 One of the most important parts of algorithm analysis revolves around time complexities, and how different algorithms may be more accurate, but take much more time to execute. A perfect example of this happening can be seen in this project, in fact, between the <strong>Brute Force Algorithm</strong> and the other two algorithms. While the <strong>Brute Force Algorithm</strong> would take a large time to find the best results, the other two algorithms would find suboptimal results in a short time. 
 In order to quantify, or identify, the time costs of each of these algorithms, it is important to use big-omega, big-theta, and big-o notations, which stand for best case, average case, and worst case, respectively. We first looked at the <strong>Brute Force Algorithm</strong> and came to the conclusion that its big-omega would be Ω(n), while its big-o would be O(2^n). We were able to come to this conclusion due to the nature of Brute Forcing and our optimization of the algorithm. We noted that if each of the paintings were the exact size of the wall or greater, then there could only be one painting per subset, meaning every painting would only be iterated over once, or Ω(n) time. On the other hand, if all the paintings were of infinitely small size, then every painting in the set could be added to the wall, and, as we discussed in class, we would have to check every possible permutation, or O(2^n) time. 
 Next, we looked at the time complexity of the other two algorithms. Since the <strong>High-Value Algorithm</strong> and the <strong>Custom Algorithm</strong> both implemented standard sort, we can immediately know the time complexities for these two algorithms. As is commonly known, the c standard sort has an average, or big-theta, time complexity of Θ(nlogn). This is the same for its big-o as well. This is very clearly shown in running the project above as well, as when increasing the dataset, the <strong>Brute Force Algorithm</strong> would be unable to run, while the other two had no problems.
