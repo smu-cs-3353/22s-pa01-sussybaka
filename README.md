@@ -56,14 +56,20 @@ it is very fast, and normally generates better, or closer-to-optimal, results th
 
 ## Project Installation
 
-First, clone the project from GitHub onto your local machine. This can be done using multiple methods, but use whatever method you are most comfortable with:
+First, clone the project from GitHub onto your local machine by pressing the green "code" button on the repository page. There are multiple methods of cloning, but use whatever method you are most comfortable with: </br>
 
 - GitHub Desktop
 - Git (Bash)
-- 
+- Unzip File
 
 Once you have the repository on your machine, make sure that you locate the folder and know the path to said folder.
 
+## Project Configuration
+
+In this section, we look at building, linking, and creating the executable for this project. If you have an IDE, such as Clion, available, you may open the project folder in the IDE and build the project using the green hammer button located on the top right. Otherwise, a step-by-step procedure for this can be found below:
+
+1. Open terminal, type wsl, and then navigate to the folder using the path specified by the cloning process.
+2. 
 
 ## 3.2 - Project Execution
 The following command can be used to run the project: </br>
