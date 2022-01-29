@@ -113,7 +113,7 @@ If you are in the project directory (path ending in /22s-pa01-sussybaka), it wil
 cmake --build cmake-build-debug
 ```
 
-Once finished with this process, the cmake-build-debug folder should have the executable in it. Before you run the executable, make sure that you copy the input and output folders into the cmake-build-debug directory. Add whatever files you'd like into these folders, and you can run them from the command line as described below. Note that the given input folder has two sample inputs, and the Algorithm Analysis folder has a couple more
+Once finished with this process, the cmake-build-debug folder should have the executable in it. Before you run the executable, make sure that you copy the input and output folders into the cmake-build-debug directory. Add whatever files you'd like into these folders, and you can run them from the command line as described below. Note that the given input folder has two sample inputs, and the Algorithm Analysis folder has a couple more.
 
 ## Project Execution
 
@@ -238,7 +238,7 @@ As expected, the <strong>High-Value Algorithm</strong> almost always gave the wo
 it was noticed that the result wasn't great as it only picked the pictures with the highest value and didn't take the width of the picture into consideration. The <strong>Custom Algorithm</strong>, on the other hand, did much better than the <strong>High-Value Algorithm</strong> since it took both the width of the picture and the value into consideration. 
 Interestingly, the <strong>Custom Algorithm</strong> gave results that were usually very close to the <strong>Brute Force Algorithm</strong>, meaning that although it was suboptimal, it was still not a bad choice, especially with datasets that could not run on the <strong>Brute Force Algorithm</strong>. </br>
 
-An interesting fact observed from the data s is that the <strong>High-Value Algorithm</strong> gave the same average result no matter the dataset size. The other two algorithms gave a better picture combination score as the picture dataset size increased. Also, as the dataset size increased, the <strong>High-Value Algorithm</strong> diverged more from the other two algorithms. </br>
+An interesting fact observed from the data is that the <strong>High-Value Algorithm</strong> gave the same average result no matter the dataset size. The other two algorithms gave a better picture combination value as the dataset size increased. Also, as the dataset size increased, the <strong>High-Value Algorithm</strong> diverged more from the other two algorithms. </br>
 
 ### Time Complexities
 One of the most important parts of algorithm analysis revolves around time complexities, and how different algorithms may be more accurate, but take much more time to execute. A perfect example of this happening can be seen in this project, in fact, between the <strong>Brute Force Algorithm</strong> and the other two algorithms. While the <strong>Brute Force Algorithm</strong> would take a large time to find the best results, the other two algorithms would find suboptimal results in a short time. 
