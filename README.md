@@ -8,6 +8,12 @@
     - High-Value Algorithm
     - Custom Algorithm
  - [Installation, Configuration, Execution](#installation-configuration-execution)
+   - Project Installation
+   - Project Configuration
+   - Project Execution
+     - Sample Input
+     - Sample Output
+- [Algorithm Analysis](#algorithm-analysis)
 
 # General Project Information
 
@@ -58,7 +64,7 @@ it is very fast, and normally generates better, or closer-to-optimal, results th
 
 First, clone the project from GitHub onto your local machine by pressing the green "code" button on the repository page. There are multiple methods of cloning, but use whatever method you are most comfortable with: </br>
 
-- GitHub Desktop
+- [GitHub Desktop](https://desktop.github.com/)
 - Git (Bash)
 - Unzip File
 
@@ -90,7 +96,7 @@ If you are in the project directory (path ending in /22s-pa01-sussybaka), it wil
 cmake -S ../22s-pa01-sussybaka -B cmake-build-debug
 ```
 
-4. You will see some messages about compiler information and configuration. You can check the cmake-build-debug folder to make sure it has been populated with necessary files.
+4. You will see some messages about compiler information and configuration. You can check the cmake-build-debug folder to make sure it has been populated with the necessary files.
 5. You can now build and link the project to create the executable. Type:
 
 ```bash
@@ -103,9 +109,9 @@ If you are in the project directory (path ending in /22s-pa01-sussybaka), it wil
 cmake --build cmake-build-debug
 ```
 
-Once finished with this process, there cmake-build-debug folder should have the executable in it. Before you run the executable, make sure that you copy the input and output folders into the cmake-build-debug directory. Add whatever input files you'd like into these folders, and you can run them from the command line as described below.
+Once finished with this process, the cmake-build-debug folder should have the executable in it. Before you run the executable, make sure that you copy the input and output folders into the cmake-build-debug directory. Add whatever files you'd like into these folders, and you can run them from the command line as described below.
 
-## 3.2 - Project Execution
+## Project Execution
 
 The following command can be used to run the project: </br>
 
@@ -113,11 +119,14 @@ The following command can be used to run the project: </br>
 ./22s-pa01-sussybaka [Input File Name] [-b]
 ```
 
+Note that if you are using an IDE, the program arguments can be specified in the configuration settings.
+
 When the code executes, it reads in the specified file name and outputs three files, one for each algorithm, to the /output/ directory. To ensure to project runs successfully, make sure the specified input file name is correct in relation to the 22s-pa01-sussybaka project file, and the /output/ directory exists in the same directory as the 22s-pa01-sussybaka project file. If something were to go wrong, an error message stating the issue would be displayed.
 
-The -b flag is used to specify whether the Brute Force Algorithm should be used. If the -b flag is included, the Brute Force Algorithm runs. If the -b flag is not there, then the Brute Force Algorithm is not run.
+The -b flag is used to specify whether the Brute Force Algorithm should be used. If the -b flag is included, the Brute Force Algorithm runs. If the -b flag is not there, then the Brute Force Algorithm will not run.
 
-## 3.3 - Sample Input
+### Sample Input
+
 The following lines are an example of an input file:
 
 ```
@@ -143,23 +152,29 @@ All proceeding lines starting at line 3 represent a picture where each line is b
 - The third number is the width of the picture.
 - The fourth and final number is the height of the image.
 
-## 3.4 - Sample Output
+### Sample Output
+
 The project will output three different files. Each file is the output from one of the algorithms. The following is an example of test-bruteforce.txt,
 test-highvalue.txt, and test-custom.txt using the sample input from above: </br>
 
 test-bruteforce.txt:
+
 ```
 46
 7 26 496 1
 10 20 466 1
 ```
+
 test-highvalue.txt:
+
 ```
 46
 7 26 496 1
 10 20 466 1
 ```
+
 test-custom.txt:
+
 ```
 34
 5 4 123 1
@@ -167,9 +182,9 @@ test-custom.txt:
 7 26 496 1
 ```
 
-The first line in the file contains the value of image orientation on the wall, and the proceeding lines starting at line 2 represent information for each picture chosen to go on the wall. Each picture line is broken up as specified in <strong>Section 2.4</strong>.
+The first line in the file contains the value of the pictures on the wall, and the proceeding lines starting at line 2 represent information for each picture chosen to go on the wall. Each picture line is broken up as specified above.
 
-# 4 - Algorithm Analysis
+# Algorithm Analysis
 The algorithm performance analysis will examine how each of the three algorithms performs, and how they compare against each other.
 
 ## 4.1 - Analysis Setup
