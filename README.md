@@ -17,7 +17,7 @@
 
 # General Project Information
 
-**Title:** Project 1 - The Art Gallery</br>
+**Title:** Project 1 - [The Art Gallery](https://docs.google.com/document/d/1NCInL-sFE2GrlSIrjY5igatf9WIooObasxVhnnvV6Iw/edit)</br>
 **Department:** Computer Science</br>
 **Professor:** Dr. Fontenot</br>
 
