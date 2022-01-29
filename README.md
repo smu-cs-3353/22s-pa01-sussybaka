@@ -14,6 +14,10 @@
      - Sample Input
      - Sample Output
 - [Algorithm Analysis](#algorithm-analysis)
+  - Setup
+  - Results
+  - Analysis
+    - Time Complexities
 
 # General Project Information
 
@@ -185,9 +189,11 @@ test-custom.txt:
 The first line in the file contains the value of the pictures on the wall, and the proceeding lines starting at line 2 represent information for each picture chosen to go on the wall. Each picture line is broken up as specified above.
 
 # Algorithm Analysis
+
 The algorithm performance analysis will examine how each of the three algorithms performs, and how they compare against each other.
 
-## 4.1 - Analysis Setup
+## Analysis Setup
+
 To set up the analysis, we take 5 different sample sizes:
 
 - 10 Pictures
@@ -204,7 +210,8 @@ Each sample of pictures is split up into 6 different parts where:
 
 So, in total, there are 30 input sample files that will be used to test the algorithms. Each algorithm goes through each dataset for a total of 84 results. Brute Force takes too long in the final dataset with 1000 pictures, so it will not be analyzed on that input file.
 
-## 4.2 - Results
+## Results
+
 Below are graphs for each dataset:
 
 ![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Value/Size%2010.png)
@@ -226,12 +233,12 @@ Below is another plot that shows the relationship among the three algorithms on 
 
 In this graph, each line and color represents a different algorithm as shown in the graph key. The x-axis represents the dataset size, and the y-axis represents the average value for that data for each algorithm.
 
-## 4.3 - Analysis
+## Analysis
 As expected, the <strong>High-Value Algorithm</strong> almost always gave the worst combination value, and the <strong>Brute Force Algorithm</strong> always gave the best value. This makes sense, as the <strong>Brute Force Algorithm</strong> examined every combination, meaning the result would always be the best combination. As for the <strong>High-Value Algorithm</strong>, it was noticed that the result wasn't great as it only picked the pictures with the highest value and didn't take the width of the picture into consideration. The <strong>Custom Algorithm</strong>, on the other hand, did much better than the <strong>High-Value Algorithm</strong> since it took both the width of the picture and the value into consideration. Interestingly, the <strong>Custom Algorithm</strong> gave results that were usually very close to the <strong>Brute Force Algorithm</strong> meaning that although it was suboptimal, it was still not a bad choice when choosing an algorithm for this problem, especially with datasets that could not run on the <strong>Brute Force Algorithm</strong>. </br>
 
 An interesting fact the data shows between the algorithms is that the <strong>High-Value Algorithm</strong> gave the same average result no matter the dataset size. The other two algorithms gave a better picture combination score the more the picture dataset size increased. Also, as the dataset size increased, the <strong>High-Value Algorithm</strong> diverged more from the other two algorithms. </br>
 
-### 4.3.1 - Time Complexities
+### Time Complexities
 One of the most important parts of algorithm analysis revolves around time complexities, and how different algorithms may be more accurate, but take much more time to execute. A perfect example of this happening can be seen in this project, in fact, between the <strong>Brute Force Algorithm</strong> and the other two algorithms. While the <strong>Brute Force Algorithm</strong> would take a large time to find the best results, the other two algorithms would find suboptimal results in a short time. 
 In order to quantify, or identify, the time costs of each of these algorithms, it is important to use big-omega, big-theta, and big-o notations, which stand for best case, average case, and worst case, respectively. We first looked at the <strong>Brute Force Algorithm</strong> and came to the conclusion that its big-omega would be Ω(n), while its big-o would be O(2^n). We were able to come to this conclusion due to the nature of Brute Forcing and our optimization of the algorithm. We noted that if each of the paintings were the exact size of the wall or greater, then there could only be one painting per subset, meaning every painting would only be iterated over once, or Ω(n) time. On the other hand, if all the paintings were of infinitely small size, then every painting in the set could be added to the wall, and, as we discussed in class, we would have to check every possible permutation, or O(2^n) time. 
 Next, we looked at the time complexity of the other two algorithms. Since the <strong>High-Value Algorithm</strong> and the <strong>Custom Algorithm</strong> both implemented standard sort, we can immediately know the time complexities for these two algorithms. As is commonly known, the c standard sort has an average, or big-theta, time complexity of Θ(nlogn). This is the same for its big-o as well. This is very clearly shown in running the project above as well, as when increasing the dataset, the <strong>Brute Force Algorithm</strong> would be unable to run, while the other two had no problems.
