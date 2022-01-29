@@ -83,7 +83,7 @@ If you have an IDE available, you may open the project folder in the IDE and bui
 Otherwise, a step-by-step procedure for doing so in the terminal can be found below:
 
 1. Open terminal, type wsl, and navigate into the folder using the path specified by the cloning process.
-2. Once you are in the folder, create a directory entitled "cmake-build-debug." This will give us a place for our cmake to work in.
+2. Once you are in the folder, create a directory entitled "cmake-build-debug." This will give us a place for cmake to work.
 3. Then, type:
 
 ```bash
