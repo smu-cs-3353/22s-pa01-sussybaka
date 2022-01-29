@@ -1,7 +1,7 @@
 # Contents
 
 - [General Project Information](#general-project-information) 
-- Project Description
+- [Project Description](#project-description)
   - The Problem
   - The Algorithms
     - Brute Force Algorithm
@@ -11,32 +11,34 @@
 
 # General Project Information
 
-Title: Project 1 - The Art Gallery</br>
-Department: Computer Science</br>
-Professor: Dr. Fontenot</br>
+**Title:** Project 1 - The Art Gallery</br>
+**Department:** Computer Science</br>
+**Professor:** Dr. Fontenot</br>
 
-Names: Gabriel Mongaras and Trevor Dohm</br>
-Date: 2 / 14 / 2022</br>
+**Names:** Gabriel Mongaras and Trevor Dohm</br>
+**Date:** 2 / 14 / 2022</br>
 
-Course: Fundamentals of Algorithms</br>
-Section: CS 3353-001</br>
+**Course:** Fundamentals of Algorithms</br>
+**Section:** CS 3353-001</br>
 
 # Project Description
 
 ## The Problem
-In this project, we aim to use three different algorithms in order to find the most valuable orientation of pictures on a wall.
+In this project, we aim to use three different algorithms in order to find the most valuable orientation of pictures on a wall, and to analyze differences between said algorithms in terms of time complexities, accuracy, and more.
 
-## 2.2 - The Algorithms
-### 2.2.1 - Brute Force Algorithm
+## The Algorithms
+
+### Brute Force Algorithm
 The <strong>Brute Force Algorithm</strong> finds all possible orientations of pictures on the wall. In our implementation, we optimize the algorithm to find only
-the combinations that will fit on the given wall. This algorithm is quite slow for large datasets but works well for small datasets. Since the 
+the combinations that will fit on the given wall. This algorithm is quite slow for large datasets but works well for small datasets, a behavior that will be discussed in later sections. Since the 
 algorithm looks at all possible combinations, it will always find the highest value arrangement of pictures on the wall.
-### 2.2.2 - High-Value Algorithm
-The <strongHigh-Value Algorithm</strong> fetches the highest value pictures in the dataset until the current picture width total reaches the maximum width, 
-or wall width. This algorithm is very fast, but it is likely to return a suboptimal arrangement of pictures.
-### 2.2.3 - Custom Algorithm
+
+### High-Value Algorithm
+The <strong>High-Value Algorithm</strong> fetches the highest value pictures in the dataset until the current picture width total reaches the wall width. This algorithm is very fast, but it is likely to return a suboptimal arrangement of pictures.
+
+### Custom Algorithm
 The <strong>Custom Algorithm</strong> we created is similar to the <strong>High-Value Algorithm</strong>, but instead of picking the highest
-value image, we pick the lowest ranked image. The rank of each image can be obtained from the following formula:  
+value image, we pick the lowest ranked image. The rank of each image can be obtained using the following formula:
 
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=\color{white}\Large\frac{(Image \:\, Width)^2}{(Wall  \:\, Width) * (Image  \:\, Value)}"></br>
@@ -44,7 +46,7 @@ value image, we pick the lowest ranked image. The rank of each image can be obta
 
 In this function, we divide the square of the image width by the product of the wall width and the picture value. The formula simply
 gives pictures with a large width and small value a higher rank while giving pictures with a small width and large value a lower rank, causing the latter to be chosen more often. This algorithm takes the same amount of time as the <strong>Most Expensive Picture First Algorithm</strong>, meaning
-it is very fast, and normally generates better, or closer-to-optimal, results than the <strong>Most Expensive Picture First Algorithm</strong>.
+it is very fast, and normally generates closer-to-optimal results than the <strong>High-Value Algorithm</strong>.
 
 # Installation and Execution
 
