@@ -7,7 +7,7 @@
     - Brute Force Algorithm
     - High-Value Algorithm
     - Custom Algorithm
- - [Installation and Execution](#installation-and-execution)
+ - [Installation, Configuration, Execution](#installation-configuration-execution)
 
 # General Project Information
 
@@ -24,19 +24,23 @@
 # Project Description
 
 ## The Problem
+
 In this project, we aim to use three different algorithms in order to find the most valuable orientation of pictures on a wall, and to analyze differences between said algorithms to further our understanding of these concepts.
 
 ## The Algorithms
 
 ### Brute Force Algorithm
+
 The <strong>Brute Force Algorithm</strong> finds all possible orientations of pictures on the wall. In our implementation, we optimize the algorithm to find only
 the combinations that will fit on the given wall. This algorithm is quite slow for large datasets but works well for small datasets, which is a behavior that will be discussed in later sections. Since the 
 algorithm looks at all possible combinations, it will always find the highest value arrangement of pictures on the wall.
 
 ### High-Value Algorithm
+
 The <strong>High-Value Algorithm</strong> fetches the highest value pictures in the dataset until the current picture width total reaches the wall width. This algorithm is very fast, but it is likely to return a suboptimal arrangement of pictures.
 
 ### Custom Algorithm
+
 The <strong>Custom Algorithm</strong> we created is similar to the <strong>High-Value Algorithm</strong>, but instead of picking the highest
 value image, we pick the lowest ranked image. The rank of each image can be obtained using the following formula:
 
@@ -46,12 +50,19 @@ value image, we pick the lowest ranked image. The rank of each image can be obta
 
 In this function, we divide the square of the image width by the product of the wall width and the picture value. The formula simply
 gives pictures with a large width and small value a higher rank while giving pictures with a small width and large value a lower rank, causing the latter to be chosen more often. This algorithm takes the same amount of time as the <strong>High-Value Algorithm</strong>, meaning
-it is very fast, and normally generates better, or closer-to-optimal, results than the <strong>High-Value Algorithm</strong>.
+it is very fast, and normally generates better, or closer-to-optimal, results than the <strong>High-Value Algorithm</strong>, though not as good as the <strong>Brute Force Algorithm</strong>.
 
-# Installation and Execution
+# Installation, Configuration, Execution
 
-## 3.1 - Project Installation
+## Project Installation
 
+First, clone the project from GitHub onto your local machine. This can be done using multiple methods, but use whatever method you are most comfortable with:
+
+- GitHub Desktop
+- Git (Bash)
+- 
+
+Once you have the repository on your machine, make sure that you locate the folder and know the path to said folder.
 
 
 ## 3.2 - Project Execution
