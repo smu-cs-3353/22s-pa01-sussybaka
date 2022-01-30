@@ -15,9 +15,10 @@
      - Sample Output
 - [Algorithm Analysis](#algorithm-analysis)
   - Setup
-  - Results
-  - Analysis
-    - Time Complexities
+  - Results By Value
+  - Analysis By Value
+  - Results By Time
+  - Analysis By Time
 - [Concluding Remarks](#concluding-remarks)
 
 # General Project Information
@@ -121,7 +122,7 @@ Once finished with this process, the cmake-build-debug folder should have the ex
 The following command can be used to run the project: </br>
 
 ```bash
-./22s-pa01-sussybaka [Input File Name] [-b]
+./22s-pa01-sussybaka [Input File Name] [-b] [-timer]
 ```
 
 Note that if you are using an IDE, the program arguments can be specified in the configuration settings.
@@ -129,6 +130,8 @@ Note that if you are using an IDE, the program arguments can be specified in the
 When the code executes, it reads in the specified file name and outputs three files, one for each algorithm, to the /output/ directory. To ensure to project runs successfully, make sure the specified input file name is correct in relation to the 22s-pa01-sussybaka project file, and the /output/ directory exists in the same directory as the 22s-pa01-sussybaka project file. If something were to go wrong, an error message stating the issue would be displayed.
 
 The -b flag is used to specify whether the Brute Force Algorithm should be used. If the -b flag is included, the Brute Force Algorithm runs. If the -b flag is not there, then the Brute Force Algorithm will not run.
+
+The -timer flag is used to specify whether the algorithms should be timed. If the -timer flag is included, the High Value Algorithm and the Custom Algorithm will be timed. If the -b flag is included, then the Brute Force Algorithm will also be timed. If the -timer flag is not included, then the program runs without timing the algorithms.
 
 ### Sample Input
 
@@ -224,10 +227,9 @@ time ./22s-pa01-sussybaka [Input File Name] [-b]
 
 This command will add some timing information to the bottom of the output, which allows for time cost analysis.
 
-2. Chrono Library. This is much more accurate and precise than the timing command, which is why we included it within this project. To run the project with Chrono, you must naviagate into the cmakelists.txt file and change "main.cpp" to "main-timed.cpp."
-After doing that, reload and rebuild the project to create a new executable. Running the project with this new executable outputs timing information for each of the algorithms. From terminal, run the command as usual.
+2. Chrono Library. This is much more accurate and precise than the timing command, which is why we included it within this project. To run the project with Chrono, you must include the -timer flag when executing the program. The program will run like normal, but will include additional timing information during execution.
 
-## Results
+## Results By Value
 
 Below are graphs for each dataset:
 
@@ -250,20 +252,41 @@ Below is another plot that shows the relationship among the three algorithms on 
 
 In this graph, each line and color represents a different algorithm as shown in the graph key. The x-axis represents the dataset size, and the y-axis represents the average value for that data for each algorithm.
 
-## Analysis
+## Analysis By Value
 As expected, the <strong>High-Value Algorithm</strong> almost always gave the worst combination value, and the <strong>Brute Force Algorithm</strong> always gave the best value. This makes sense, as the <strong>Brute Force Algorithm</strong> examined every combination, meaning the result would always be the best combination. As for the <strong>High-Value Algorithm</strong>, 
 it was noticed that the result wasn't great as it only picked the pictures with the highest value and didn't take the width of the picture into consideration. The <strong>Custom Algorithm</strong>, on the other hand, did much better than the <strong>High-Value Algorithm</strong> since it took both the width of the picture and the value into consideration. 
 Interestingly, the <strong>Custom Algorithm</strong> gave results that were usually very close to the <strong>Brute Force Algorithm</strong>, meaning that although it was suboptimal, it was still not a bad choice, especially with datasets that could not run on the <strong>Brute Force Algorithm</strong>. </br>
 
 An interesting fact observed from the data is that the <strong>High-Value Algorithm</strong> gave the same average result no matter the dataset size. The other two algorithms gave a better picture combination value as the dataset size increased. Also, as the dataset size increased, the <strong>High-Value Algorithm</strong> diverged more from the other two algorithms. </br>
 
-### Time Complexities
+## Results By Time
 
-One of the most important parts of algorithm analysis revolves around time complexities, and how different algorithms may be more accurate, but take much more time to execute. A perfect example of this happening can be seen in this project, in fact, between the <strong>Brute Force Algorithm</strong> and the other two algorithms. While the <strong>Brute Force Algorithm</strong> would take a long time to find the best results, the other two algorithms would find suboptimal results in a short time. In order to quantify, or identify, the time costs of each of these algorithms, it is important to use big-theta and big-o notations, which stand for average case and worst case, respectively. Note that big-omega, or best case, is not used because it doesn't tell us anything important about the algorithm execution. </br>
+Below are graphs for each dataset when comparing the algorithms by the resulting time it took the algorithms to get a result:
 
-We first looked at the <strong>Brute Force Algorithm</strong> and came to the conclusion that its big-o would be O(2^n), but we were unsure about the average complexity, or big-theta. We were able to come to this conclusion due to the nature of Brute Forcing and our optimization of the algorithm. We realized that, if all the paintings were of infinitely small size, then every painting in the set could be added to the wall, and, as we discussed in class, we would have to check every possible permutation, meaning O(2^n) complexity. </br>
+![Size 10 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%2010.png)
+![Size 15 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%2015.png)
+![Size 50 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%2050.png)
+![Size 100 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%20100.png)
+![Size 1000 Results](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Size%201000.png)
 
-Next, we looked at the time complexity of the other two algorithms. Since the <strong>High-Value Algorithm</strong> and the <strong>Custom Algorithm</strong> both implemented c standard sort, we immediately knew the time complexities for these two algorithms. As is commonly known, the c standard sort has an average, or big-theta, time complexity of Θ(nlogn). This is the same for its big-o as well, O(nlogn). This is very clearly shown in running the project as well, as when increasing the dataset, the <strong>Brute Force Algorithm</strong> would be unable to run, while the other two had no problems. </br>
+In each graph, the different lines represent the different algorithms:
+
+- Blue is the Brute Force Algorithm
+- Orange is the Custom Algorithm
+- Grey is the High Value Algorithm
+
+The trial number is on the x-axis, and the time taken to run the algorithm is on the y-axis.</br>
+Below are plots showing the relationship among the three algorithms on all datasets.
+
+![Comparizon of All Algorithms on All Datasets](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Average%20Time%20To%20Run%20vs.%20Dataset%20Size%20-%201.png)
+![Comparizon of All Algorithms on All Datasets](https://github.com/smu-cs-3353/22s-pa01-sussybaka/blob/README_Creation/Algorithm%20Analysis/Graphs_Time/Average%20Time%20To%20Run%20vs.%20Dataset%20Size%20-%202.png)
+
+In this graph, each line and color represents a different algorithm as shown in the graph key. The x-axis represents the dataset size, and the y-axis represents the average time for that data for each algorithm.
+
+## Analysis By Time - Time Complexities
+One of the most important parts of algorithm analysis revolves around time complexities, and how different algorithms may be more accurate, but take much more time to execute. A perfect example of this happening can be seen in this project, in fact, between the <strong>Brute Force Algorithm</strong> and the other two algorithms. While the <strong>Brute Force Algorithm</strong> would take a large time to find the best results, the other two algorithms would find suboptimal results in a short time. 
+In order to quantify, or identify, the time costs of each of these algorithms, it is important to use big-omega, big-theta, and big-o notations, which stand for best case, average case, and worst case, respectively. We first looked at the <strong>Brute Force Algorithm</strong> and came to the conclusion that its big-omega would be Ω(n), while its big-o would be O(2^n). We were able to come to this conclusion due to the nature of Brute Forcing and our optimization of the algorithm. We noted that if each of the paintings were the exact size of the wall or greater, then there could only be one painting per subset, meaning every painting would only be iterated over once, or Ω(n) time. On the other hand, if all the paintings were of infinitely small size, then every painting in the set could be added to the wall, and, as we discussed in class, we would have to check every possible permutation, or O(2^n) time. 
+Next, we looked at the time complexity of the other two algorithms. Since the <strong>High-Value Algorithm</strong> and the <strong>Custom Algorithm</strong> both implemented standard sort, we can immediately know the time complexities for these two algorithms. As is commonly known, the c standard sort has an average, or big-theta, time complexity of Θ(nlogn). This is the same for its big-o as well. This is very clearly shown in running the project above as well, as when increasing the dataset, the <strong>Brute Force Algorithm</strong> would be unable to run, while the other two had no problems.
 
 In conclusion, looking only at the worst case, or big-o notation, or each of the algorithms, we found:
 
