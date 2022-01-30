@@ -157,6 +157,9 @@ All proceeding lines starting at line 3 represent a picture where each line is b
 - The third number is the width of the picture.
 - The fourth and final number is the height of the image.
 
+As discussed above, there are seven sample outputs already in the repository, two being in the input folder, and the other five being in the Algorithm Analysis folder. If desired, more sample inputs can be generated using the test.py script found in the src folder.
+This script simply generates a randomized input that can then be dragged into the input folder for usage. Just run the program and it will store the input file in the same directory.
+
 ### Sample Output
 
 The project will output three different files. Each file is the output from one of the algorithms. The following is an example of test-bruteforce.txt,
