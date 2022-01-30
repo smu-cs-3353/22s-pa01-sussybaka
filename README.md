@@ -15,9 +15,10 @@
      - Sample Output
 - [Algorithm Analysis](#algorithm-analysis)
   - Setup
-  - Results
-  - Analysis
-    - Time Complexities
+  - Results By Value
+  - Analysis By Value
+  - Results By Time
+  - Analysis By Time
 - [Concluding Remarks](#concluding-remarks)
 
 # General Project Information
@@ -121,7 +122,7 @@ Once finished with this process, the cmake-build-debug folder should have the ex
 The following command can be used to run the project: </br>
 
 ```bash
-./22s-pa01-sussybaka [Input File Name] [-b]
+./22s-pa01-sussybaka [Input File Name] [-b] [-timer]
 ```
 
 Note that if you are using an IDE, the program arguments can be specified in the configuration settings.
@@ -129,6 +130,8 @@ Note that if you are using an IDE, the program arguments can be specified in the
 When the code executes, it reads in the specified file name and outputs three files, one for each algorithm, to the /output/ directory. To ensure to project runs successfully, make sure the specified input file name is correct in relation to the 22s-pa01-sussybaka project file, and the /output/ directory exists in the same directory as the 22s-pa01-sussybaka project file. If something were to go wrong, an error message stating the issue would be displayed.
 
 The -b flag is used to specify whether the Brute Force Algorithm should be used. If the -b flag is included, the Brute Force Algorithm runs. If the -b flag is not there, then the Brute Force Algorithm will not run.
+
+The -timer flag is used to specify whether the algorithms should be timed. If the -timer flag is included, the High Value Algorithm and the Custom Algorithm will be timed. If the -b flag is included, then the Brute Force Algorithm will also be timed. If the -timer flag is not included, then the program runs without timing the algorithms.
 
 ### Sample Input
 
