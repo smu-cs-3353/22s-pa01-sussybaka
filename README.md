@@ -194,7 +194,7 @@ The first line in the file contains the value of the pictures on the wall, and t
 
 # Algorithm Analysis
 
-The algorithm performance analysis will examine how each of the three algorithms performs, and how they compare against each other.
+This section will examine how each of the three algorithms performs, and how they compare against each other.
 
 ## Analysis Setup
 
@@ -213,6 +213,19 @@ Each sample of pictures is split up into 6 different parts where:
 - The maxWidth is 5000 x 2
 
 So, in total, there are 30 input sample files that will be used to test the algorithms. Each algorithm goes through each dataset for a total of 84 results. Brute Force takes too long in the final dataset with 1000 pictures, so it will not be analyzed on that input file.
+
+When doing analysis, we also looked at the time cost of each of the algorithms. This can be analyzed in two main ways:
+
+1. Using Time command in terminal. To use this command, first navigate to the cmake-build-debug folder, or wherever your executable is stored. When running the program, prepend the execution with "time." If done correctly, it will look something like this:
+
+```bash
+time ./22s-pa01-sussybaka [Input File Name] [-b]
+```
+
+This command will add some timing information to the bottom of the output, which allows for time cost analysis.
+
+2. Chrono Library. This is much more accurate and precise than the timing command, which is why we included it within this project. To run the project with Chrono, you must naviagate into the cmakelists.txt file and change "main.cpp" to "main-timed.cpp."
+After doing that, reload and rebuild the project to create a new executable. Running the project with this new executable outputs timing information for each of the algorithms. From terminal, run the command as usual.
 
 ## Results
 
