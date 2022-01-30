@@ -227,8 +227,7 @@ time ./22s-pa01-sussybaka [Input File Name] [-b]
 
 This command will add some timing information to the bottom of the output, which allows for time cost analysis.
 
-2. Chrono Library. This is much more accurate and precise than the timing command, which is why we included it within this project. To run the project with Chrono, you must naviagate into the cmakelists.txt file and change "main.cpp" to "main-timed.cpp."
-After doing that, reload and rebuild the project to create a new executable. Running the project with this new executable outputs timing information for each of the algorithms. From terminal, run the command as usual.
+2. Chrono Library. This is much more accurate and precise than the timing command, which is why we included it within this project. To run the project with Chrono, you must include the -timer flag when executing the program. The program will run like normal, but will include additional timing information during execution.
 
 ## Results By Value
 
