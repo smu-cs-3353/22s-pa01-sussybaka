@@ -214,7 +214,7 @@ Each sample of pictures is split up into 6 different parts where:
 
 So, in total, there are 30 input sample files that will be used to test the algorithms. Each algorithm goes through each dataset for a total of 84 results. Brute Force takes too long in the final dataset with 1000 pictures, so it will not be analyzed on that input file.
 
-When doing analysis, we also looked at the time cost of each of the algorithms. This can be analyzed in two main ways:
+When doing analysis, we also looked at the time cost of each of the algorithms using two main methods:
 
 1. Using Time command in terminal. To use this command, first navigate to the cmake-build-debug folder, or wherever your executable is stored. When running the program, prepend the execution with "time." If done correctly, it will look something like this:
 
