@@ -9,4 +9,4 @@ add_executable(22s-pa01-sussybaka src/main.cpp src/Loader.cpp src/Loader.h src/P
 #set(CMAKE_CXX_STANDARD 14)
 
 # Input and output configure files
-configure_file(input/test.txt COPYONLY)
+configure_file(input/test.txt input/test.txt COPYONLY)
